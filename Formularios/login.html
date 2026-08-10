@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+     <section id="lado-esquerdo">
+        <div>
+            <h1>ESSENCE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente id cumque, nihil, sint sed harum neque corrupti a doloribus quam suscipit obcaecati aut placeat vitae veniam, labore nesciunt. Suscipit, sed.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, dolores quas est similique architecto vitae molestias, laborum voluptates beatae enim, recusandae hic nesciunt asperiores eius exercitationem placeat adipisci tempore ipsa.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, velit, quo odio eos minus delectus ducimus .</p>
+           
+        </div>
+    </section>
+    <section id="formulario">  
+        <form action="login.php" method="post" autocomplete="off">
+            <h1>Login!</h1>
+            <hr>
+            <div>
+                <label for="nome">Nome: </label> <br>
+                <input type="text" placeholder="Insira o seu nome " name="nome_login" id="nome" required>
+            </div>
+            <div>
+                <label for="email">E-mail: </label> <br>
+                <input type="email" placeholder="Insira o seu email" name="email_login" id="email" required>
+            </div>
+            <div>
+                <label for="senha1">Senha: </label> <br>
+                <input type="password" placeholder="Insira uma senha" name="senha_login" id="senha1" required>
+            </div>
+            <div>
+                <input type="submit" value="Entrar">
+            </div>
+            <p>Ainda não tem conta?    <a href="cadastro.html">Cadastre-se</a></p>
+        </form>
+    </section>
+    <div id="claro-escuro">
+        <img src="../Imagens/Icons/sol.svg" alt="Modo claro/escuro" onclick="trocar()" id="img1">
+    </div>
+</body>
+</html>

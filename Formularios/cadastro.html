@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <section id="lado-esquerdo">
+        <div>
+            <h1>ESSENCE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente id cumque, nihil, sint sed harum neque corrupti a doloribus quam suscipit obcaecati aut placeat vitae veniam, labore nesciunt. Suscipit, sed.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, dolores quas est similique architecto vitae molestias, laborum voluptates beatae enim, recusandae hic nesciunt asperiores eius exercitationem placeat adipisci tempore ipsa.</p>
+        </div>
+    </section>
+    <section id="formulario">  
+        <form action="cadastro.php" method="post" autocomplete="off">
+            <h1>Cadastro!</h1>
+            <hr>
+            <div>
+                <label for="nome">Nome: </label> <br>
+                <input type="text" placeholder="Insira o seu nome " name="nome" id="nome" required>
+            </div>
+            <div>
+                <label for="email">E-mail: </label> <br>
+                <input type="email" placeholder="Insira o seu email" name="email" id="email" required>
+            </div>
+            <div>
+                <label for="senha">Senha: </label> <br>
+                <input type="password" placeholder="Insira uma senha" name="senha" id="senha1" required>
+            </div>
+            <div>
+                <label for="senha2">Confirme a senha: </label> <br>
+                <input type="password" placeholder="Confirme sua senha" name="senha2" id="senha2" required>
+            </div>
+        
+            <div id="politicas">
+                <p><input type="checkbox" name="" id="">Termos e política de privacidade</p>
+            </div>
+            <div>
+                <input type="submit" value="Cadastrar" onclick="verificar()">
+            </div>
+            <p>Já tem conta?    <a href="login.html">Faça login</a></p>
+        </form>
+    <div id="claro-escuro">
+        <img src="../Imagens/Icons/sol.svg" alt="Modo claro/escuro" onclick="trocar()" id="img1">
+    </div>
+    </section>
+    <script>
+        function verificar(){
+            let valor1 = document.getElementById("senha1").value
+            let valor2 = document.getElementById("senha2").value
+
+            if(valor1 !== valor2){
+                window.alert("Senhas diferentes, tente novamente!")
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

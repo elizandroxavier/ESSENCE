@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
+
+:root {
+    --primary: #e8410a;
+    --primary-dark: #c23408;
+    --primary-light: #ff6535;
+    --gold: #f5a623;
+    --gold-light: #ffc453;
+    --bg: #f7f5f2;
+    --bg-white: #ffffff;
+    --bg-dark: #111110;
+    --text-primary: #1a1917;
+    --text-secondary: #5a5855;
+    --text-muted: #9a9895;
+    --fusco: rgba(104, 102, 102, 0.92);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+header {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    padding: 13px 5px;
+    width: 100%;
+    height: 15vh;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-60deg, transparent 45%, rgba(255, 255, 255, 0.163), transparent 55%);
+    background-size: 200% 190%;
+    animation: moverCor 7s linear infinite;
+    z-index: -1;
+}
+
+header #logo {
+    width: 10%;
+    cursor: pointer;
+}
+
+header #logo img {
+    width: 100%;
+}
+
+header #links-cabeça {
+    color: white;
+    margin-top: 4.5%;
+    padding: 6px 12px;
+    width: 70%;
+    gap: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header #links-cabeça a {
+    font-size: 2.3rem;
+    color: white;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    display: inline-block;
+    /* garante que margin horizontal funcione se necessário */
+    padding: 6px 8px;
+    transition: 0.2s;
+    position: relative;
+}
+
+header #links-cabeça a::after {
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+
+header #links-cabeça a:hover::after {
+    width: 100%;
+    background-color: var(--primary);
+}
+
+header #links-cabeça a:hover {
+    transform: scale(1.1);
+    color: var(--primary);
+}
+
+header #loja {
+    align-items: center;
+    padding: 10px 10px 20px 10px;
+    width: 30%;
+    gap: 10px;
+}
+
+header #loja nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 6px 8px;
+    gap: 20px;
+}
+
+header #loja nav a {
+    text-decoration: none;
+    color: white;
+
+}
+
+header #loja nav a img {
+    width: 120%;
+    transition: transform .3s ease;
+}
+
+header #loja nav a img:hover {
+    transform: scale(1.1);
+}
+
+header #loja input {
+    height: 1.5vw;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-top: 13px;
+    padding-left: 5px;
+    padding: 3px 3px 3px 5px;
+    position: relative;
+    width: 70%;
+    top: 13%;
+}
+
+header #loja input::placeholder {
+    font-size: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    width: 100%;
+    min-height: 85vh; 
+    gap: 20px;
+    padding-top: 20px; 
+}
+
+main .main-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 20px;
+    margin: 0 55px;
+    flex-wrap: wrap;
+    /*Impede que os elementos saiam pelas laterais*/
+    box-sizing: border-box;
+}
+
+main .card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-white);
+    flex-wrap: wrap;
+    border-radius: 8px;
+    align-items: center;
+
+    width: 16vw;
+    height: 400px;
+    max-width: 100%;
+    /*Garante que nunca passa da largura  da mãe*/
+}
+
+main .card .produto {
+    width: 100%;
+    height: 500px;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.315);
+}
+
+main .card .produto .div-foto-produto {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+main .card .produto .div-foto-produto .foto-produto {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    border-end-end-radius: 0;
+    transition: transform .3s ease;
+}
+
+main .card .produto .div-foto-produto .foto-produto:hover {
+    transform: scale(1.05);
+}
+
+main .card .produto .conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 13px;
+    gap: 15px;
+    width: 90%;
+    padding: 15px;
+    cursor: auto;
+    color: var(--text-primary);
+}
+
+main .card .produto .conteudo .linha {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+main .card .produto .conteudo .descrição-produto {
+    text-align: center;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+main .card .produto .conteudo .linha .desconto-produto {
+    text-align: center;
+    border-radius: 18px;
+    font-size: 1.3em;
+    font-weight: normal;
+    color: var(--primary);
+}
+
+main .card .produto .conteudo .botaoComprar {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    border-radius: 18px;
+    padding-left: 4px;
+    font-size: 1.7rem;
+    font-weight: normal;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    background: var(--primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    isolation: isolate;
+}
+
+main .card .produto .conteudo .botaoComprar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-60deg, transparent 40%, rgba(255, 255, 255, 0.597), transparent 60%);
+    background-size: 200% 100%;
+    animation: moverCor 7s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moverCor {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+main .card .produto .conteudo .botaoComprar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.flash-strip {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.flash-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    animation: scrollLeft 20s linear infinite;
+    width: max-content;
+}
+
+.flash-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.flash-item strong {
+    font-weight: 700;
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+main .main-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(60deg, var(--primary), var(--secondary));
+}
+
+footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
