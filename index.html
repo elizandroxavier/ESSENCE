@@ -22,15 +22,44 @@
         </nav>
         <div id="loja">
             <nav>
-                <a href="#"><img src="Imagens/Icons/sacola-de-compras.svg" alt="Ajuda"></a>
+                <a href="#"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Favorito"></a>
+
                 <a href="#"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho"></a>
-                <a href="Formularios/login.html"><img src="Imagens/Icons/pessoa.svg" alt="Cadastro"></a>
-                <a href="#"><img src="Imagens/Icons/sacola-de-compras.svg" alt="sacola-de-compras"></a>
+
+                <a><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
             </nav>
             <input type="text" placeholder="Pesquisa">
         </div>
     </header>
     <main>
+        <section id="formulario">
+            <div id="modal-box">
+                <div id="modal">
+                    <form action="login.php" method="post" autocomplete="off">
+                        <h1>Login!</h1>
+                        <hr>
+                        <div>
+                            <label for="nome">Nome:</label> <br>
+                            <input type="text" placeholder="Insira o seu nome " name="nome_login" id="nome" required>
+                        </div>
+                        <div>
+                            <label for="email">E-mail:</label> <br>
+                            <input type="email" placeholder="Insira o seu email" name="email_login" id="email" required>
+                        </div>
+                        <div>
+                            <label for="senha1">Senha:</label> <br>
+                            <input type="password" placeholder="Insira uma senha" name="senha_login" id="senha1" required>
+                        </div>
+                        <div class="botoes">
+                            <button id="fechar-modal">Cancelar</button>
+                            <button type="submit" id="btn-entrar">Entrar</button>
+                        </div>
+                        
+                        <p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+                    </form>
+                </div>
+            </div>
+        </section>
         <div class="main-cards">
             <section class="card">
                 <a href="compra.html" class="produto">
@@ -206,27 +235,40 @@
 
         <div class="flash-strip">
             <div class="flash-inner">
-                <div class="flash-item">⚡ <strong>FLASH SALE</strong> — Até 60% de desconto</div>
+                <div class="flash-item"><strong>FLASH SALE</strong> — Até 60% de desconto</div>
                 <div class="flash-item">🎁 Frete grátis acima de Kzs 15.000</div>
-                <div class="flash-item">🔥 Mais de 10.000 produtos disponíveis</div>
-                <div class="flash-item">✦ Entrega em 24-48h em Luanda</div>
-                <div class="flash-item">⚡ <strong>FLASH SALE</strong> — Até 60% de desconto</div>
+                <div class="flash-item">Mais de 10.000 produtos disponíveis</div>
+                <div class="flash-item">🛒Entrega em 24-48h em Luanda</div>
+                <div class="flash-item"><strong>FLASH SALE</strong> — Até 60% de desconto</div>
                 <div class="flash-item">🎁 Frete grátis acima de Kzs 15.000</div>
-                <div class="flash-item">🔥 Mais de 10.000 produtos disponíveis</div>
-                <div class="flash-item">✦ Entrega em 24-48h em Luanda</div>
+                <div class="flash-item">Mais de 10.000 produtos disponíveis</div>
+                <div class="flash-item">🛒 Entrega em 24-48h em Luanda</div>
             </div>
         </div>
-        <section class="main-cadastro">
-            <div class="p1">
-                <p>Pronto pra começar?</p>
-            </div>
-            <div class="p2">
-                <p>Crie sua conta hoje mesmo para explorar milhões de opções na nossa loja!</p>
-            </div>
-            <div><a class="cadastrar" href="Formularios/cadastro.html">Cadastrar</a></div>
+        <section class="conteiner">
+            <div class="hero">
+                <div class="hero-deco"></div>
+                <div class="hero-deco2"></div>
+                <div class="hero-deco3"></div>
+                <div class="p1">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-badge">✦ Nova Colecção 2025</div>
+                    <h1>Vista o Seu <span>Melhor</span> Lado</h1>
+                    <p>Moda premium com os melhores preços de Angola. Descubra peças únicas para cada ocasião.</p>
+                    <div class="hero-cta">
+                        Explorar Agora
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16"
+                            height="16">
+                            <path d="M5 12h14m-7-7 7 7-7 7" />
+                        </svg>
+                    </div>
         </section>
     </main>
     <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate placeat est laudantium nobis, itaque
+            asperiores, assumenda ipsa sunt numquam eum nesciunt! Numquam repellendus eaque consectetur illo, quos eos
+            tempora.</p>
     </footer>
     <script src="script.js"></script>
 </body>

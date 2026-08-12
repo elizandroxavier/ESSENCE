@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     text-decoration: none;
 }
 
@@ -19,7 +20,6 @@
     --text-muted: #9a9895;
     --fusco: rgba(104, 102, 102, 0.92);
 }
-
 body {
     display: flex;
     flex-direction: column;
@@ -163,6 +163,132 @@ main {
     gap: 20px;
     padding-top: 20px; 
 }
+main #formulario #modal-box{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    inset: 0;
+    position: fixed;
+    display: none;
+}
+main #formulario #modal-box.aberto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+main #formulario #modal-box.aberto .modal{
+    animation: .5s modal ;
+}
+@keyframes modal {
+    from{
+        transform: translateY(100vh);
+    }
+    top{
+        transform: translateY(0vh);
+    }
+}
+main #formulario #modal-box #modal{
+    width: 40vw;
+}
+main #formulario #modal-box #modal form{
+    display: flex;    
+    flex-direction: column;
+    padding: 32px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.537);
+    border-radius: 15px;
+    border: 1px solid white;
+    gap: 16px;
+    color: white;
+}
+main #formulario #modal-box #modal form h1{
+    font-size: 3rem;
+    margin: 0;
+    text-align: center;
+}
+main #formulario #modal-box #modal form hr, main #formulario #modal-box #modal form div{
+    width: 100%;
+}
+main #formulario #modal-box #modal form label{
+    margin-left: 5px;
+}
+main #formulario #modal-box #modal form div input{
+    border: 0.5px solid white;
+    outline: none;
+    border-radius: 12px;
+    margin-top: 6px;
+    padding: 10px 12px;
+    width: 95%;
+    color: white;
+    box-shadow: 0 0 8px rgba(255,255,255,0.08) inset;
+    backdrop-filter: blur(8px);
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+main #formulario #modal-box #modal form input:hover{
+    transform: translateY(-2px);
+}
+
+main #formulario #modal-box #modal input::placeholder{
+    color: rgba(255, 255, 255, 0.8);
+}
+main #formulario #modal-box #modal form .botoes{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+main #formulario #modal-box form .botoes button{
+    width: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    border: .5px solid white;
+}
+main #formulario #modal-box #modal form .botoes button:hover{
+    transform: translateX(1px);
+    box-shadow: 0 0 5px white;
+    border: none;
+}
+main #formulario #modal-box form .botoes #fechar-modal{
+    background-color: red;
+}
+main #formulario #modal-box form .botoes #btn-entrar{
+    background-color: rgb(6, 180, 6);
+}
+#politicas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+#politicas input{
+    margin: 0;
+    width: 18px;
+}
+form p{
+    text-align: center;   
+}
+ form a{
+    text-decoration: none;
+    color: inherit;
+}
+main #formulario #modal-box from a:hover{
+    text-decoration: underline;
+}
+.pConta{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: row;
+    gap: 5px;
+    animation: girar 2s linear infinite;
+}
+
 
 main .main-cards {
     display: flex;
@@ -181,14 +307,13 @@ main .card {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-white);
-    flex-wrap: wrap;
+    flex-wrap: wrap;/*Garante que nunca passa da largura  da mãe*/
     border-radius: 8px;
     align-items: center;
-
     width: 16vw;
     height: 400px;
     max-width: 100%;
-    /*Garante que nunca passa da largura  da mãe*/
+    
 }
 
 main .card .produto {
@@ -336,16 +461,112 @@ main .card .produto .conteudo .botaoComprar:hover {
     }
 }
 
-main .main-cadastro {
+main .conteiner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    justify-content: center;
+    width: 85vw;
+    height: 400px;
     gap: 20px;
-    padding: 20px;
-    background: linear-gradient(60deg, var(--primary), var(--secondary));
+    margin-bottom: 30px;
+    border-radius: 15px;
 }
-
+.hero{
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1917 0%, #2d2925 50%, #3d2015 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(232,65,10,0.25) 0%, transparent 60%);
+}
+.hero-deco {
+  position: absolute;
+  left: 20px;
+  bottom: -20px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 60px solid rgba(232,65,10,0.08);
+}
+.hero-deco2 {
+  position: absolute;
+  right: 60px;
+  top: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 40px solid rgba(245,166,35,0.06);
+}
+.hero-deco3 {
+  position: absolute;
+  right: -20px;
+  top: 90px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 40px solid rgba(245,166,35,0.06);
+}
+.hero-content { position: relative; 
+    z-index: 1; 
+    max-width: 400px; 
+}
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: 46px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+.hero-content h1 span {
+    color: var(--primary-light); 
+}
+.hero-content p { 
+    color: rgba(255,255,255,0.6); 
+    font-size: 15px; 
+    margin-bottom: 28px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 28px;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+}
+.hero-cta:hover { 
+    background: var(--primary-dark); 
+    transform: translateY(-1px); 
+    box-shadow: 0 6px 20px rgba(232,65,10,0.4); }
 footer {
     background-color: black;
     color: white;
