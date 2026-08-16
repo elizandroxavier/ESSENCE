@@ -1,15 +1,16 @@
 <?php
-require ("conexao.php");
+require "conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST["nome_login"];
-    $email = $_POST["email_login"];
-    $senha = $_POST["senha_login"];
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
 
 
-    $sql = "SELECT * FROM user WHERE email='$email' AND senha='$senha'";
+    $sql = $conn->prepare("SELECT * FROM user WHERE email = ? AND senha = ?");
+    $sql->bind_param("ss",$email,$senha);
+    $sql->execute();
 
-    $resultado = mysqli_query($conexao, $sql);
+    $resultado = $sql->get_result();
 
     if (mysqli_num_rows($resultado) > 0) {
         echo "Login realizado com sucesso!";
@@ -20,4 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     header("Location: cadastro.html");
 }
+header("Location: ../index.html");
+
 ?>

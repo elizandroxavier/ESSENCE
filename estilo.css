@@ -4,6 +4,7 @@
     padding: 0;
     font-family: 'DM Sans', sans-serif;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 :root {
@@ -34,7 +35,7 @@ header {
     margin-bottom: 40px;
     padding: 13px 5px;
     width: 100%;
-    height: 15vh;
+    height: 16.5vh;
     position: sticky;
     z-index: 1;
     top: 0;
@@ -179,7 +180,7 @@ main #formulario #modal-box.aberto{
     backdrop-filter: blur(5px);
     z-index: 1000;
 }
-main #formulario #modal-box.aberto .modal{
+main #formulario #modal-box.aberto #modal{
     animation: .5s modal ;
 }
 @keyframes modal {
@@ -190,105 +191,160 @@ main #formulario #modal-box.aberto .modal{
         transform: translateY(0vh);
     }
 }
-main #formulario #modal-box #modal{
-    width: 40vw;
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 420px;
+    background: radial-gradient(circle, #e8410a,#c23408);
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.41);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    overflow: hidden;
 }
-main #formulario #modal-box #modal form{
-    display: flex;    
-    flex-direction: column;
-    padding: 32px;
+.wrapper.active{
+    height: 560px;
+}
+.wrapper .fechar-modal{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    background-color: white;
+    color: red;
+    border-bottom-left-radius: 10px;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper .fechar-modal:hover{
+    background-color: transparent;
+    color: white;
+}
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper .form-box.cadastro{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.wrapper.active .form-box.cadastro{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .form-box{
     width: 100%;
     height: 100%;
-    background-color: black;
-    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.537);
-    border-radius: 15px;
-    border: 1px solid white;
-    gap: 16px;
-    color: white;
+    padding: 35px 35px;
 }
-main #formulario #modal-box #modal form h1{
-    font-size: 3rem;
-    margin: 0;
+.wrapper .form-box h2{
     text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
 }
-main #formulario #modal-box #modal form hr, main #formulario #modal-box #modal form div{
+.wrapper .form-box.cadastro{
+    position: absolute;
+    transform: translateX(400px);
+}
+.wrapper .form-box form .input-box{
+    position: relative;
     width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
 }
-main #formulario #modal-box #modal form label{
-    margin-left: 5px;
+.wrapper .form-box form .input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: .5s;
+    pointer-events: none;
 }
-main #formulario #modal-box #modal form div input{
-    border: 0.5px solid white;
-    outline: none;
-    border-radius: 12px;
-    margin-top: 6px;
-    padding: 10px 12px;
-    width: 95%;
-    color: white;
-    box-shadow: 0 0 8px rgba(255,255,255,0.08) inset;
-    backdrop-filter: blur(8px);
-    transition: box-shadow 0.18s, transform 0.18s;
+.wrapper .form-box form .input-box input:focus~label,
+.wrapper .form-box form .input-box input:valid~label{
+    top: -1px;
 }
-main #formulario #modal-box #modal form input:hover{
-    transform: translateY(-2px);
-}
-
-main #formulario #modal-box #modal input::placeholder{
-    color: rgba(255, 255, 255, 0.8);
-}
-main #formulario #modal-box #modal form .botoes{
-    display: flex;
-    flex-direction: row;
+.wrapper .form-box form .input-box input{
     width: 100%;
-    justify-content: center;
-    gap: 20px;
-}
-main #formulario #modal-box form .botoes button{
-    width: 100px;
-    padding: 10px;
-    border-radius: 15px;
-    border: .5px solid white;
-}
-main #formulario #modal-box #modal form .botoes button:hover{
-    transform: translateX(1px);
-    box-shadow: 0 0 5px white;
+    height: 100%;
+    background-color: transparent;
     border: none;
+    outline: none;
+    color: white;
+    padding-left: 4px;
 }
-main #formulario #modal-box form .botoes #fechar-modal{
-    background-color: red;
+.wrapper .form-box form .input-box input:-webkit-autofill,
+.wrapper .form-box form .input-box input:-webkit-autofill:hover,
+.wrapper .form-box form .input-box input:-webkit-autofill:focus{
+    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: white;
 }
-main #formulario #modal-box form .botoes #btn-entrar{
-    background-color: rgb(6, 180, 6);
+.wrapper .form-box form .input-box .icone img{
+    position: absolute;
+    right: 4px;
+    width: 20px;
+    height: 48px; 
+    fill: white !important;
+    filter: brightness(0) invert(1);   
 }
-#politicas{
+.wrapper .form-box form div .check{
+    width: 12px;
+    height: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.wrapper .form-box form .botao{
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: green;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: .3s;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.wrapper .form-box form .botao:hover{
+    background-color: transparent;
+    border: 1px solid white;
+}
+.wrapper .form-box form .login-cadastro{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
 }
-#politicas input{
-    margin: 0;
-    width: 18px;
+.wrapper .form-box form .login-cadastro .cadastro-link, .login-link{
+    cursor: pointer;
 }
-form p{
-    text-align: center;   
-}
- form a{
-    text-decoration: none;
-    color: inherit;
-}
-main #formulario #modal-box from a:hover{
+.wrapper .form-box form .login-cadastro .cadastro-link:hover,
+.wrapper .form-box form .login-cadastro .login-link:hover{
     text-decoration: underline;
 }
-.pConta{
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    flex-direction: row;
-    gap: 5px;
-    animation: girar 2s linear infinite;
-}
-
 
 main .main-cards {
     display: flex;

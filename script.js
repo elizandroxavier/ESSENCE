@@ -14,7 +14,7 @@ const botoes = document.querySelectorAll('.botaoComprar');
         });
 
 const btnAbrirModal = document.getElementById('abrir-modal')
-const btnFecharModal = document.getElementById('fechar-modal')
+const btnFecharModal = document.querySelectorAll('.fechar-modal')
 const modalBox = document.getElementById('modal-box')
 
 btnAbrirModal.addEventListener('click', function(){
@@ -22,4 +22,15 @@ btnAbrirModal.addEventListener('click', function(){
 })
 btnFecharModal.addEventListener('click', function(){
     modalBox.classList.remove('aberto');
+})
+
+const wrapper = document.querySelectorAll('.wrapper');
+const loginLink = document.querySelectorAll('.login-link');
+const cadastroLink = document.querySelectorAll('.cadastro-link');
+
+cadastroLink.addEventListener('click', () =>{
+    wrapper.classList.add('active')
+})
+loginLink.addEventListener('click', () =>{
+    wrapper.classList.remove('active')
 })

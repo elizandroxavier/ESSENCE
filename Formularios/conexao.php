@@ -1,8 +1,9 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$bd = "essence";
+    
+    $host = "localhost";
+    $user = "root";
+    $pass = "";
+    $bd = "essence";
 
-$conexao = new mysqli($host,$user,$pass,$bd);
+    $conn = new mysqli($host,$user,$pass,$bd);
 ?>

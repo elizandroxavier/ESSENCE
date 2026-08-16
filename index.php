@@ -22,7 +22,8 @@
         </nav>
         <div id="loja">
             <nav>
-                <a href="#"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Favorito"></a>
+                <a href="#"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt="Favorito"></a>
 
                 <a href="#"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho"></a>
 
@@ -35,28 +36,70 @@
         <section id="formulario">
             <div id="modal-box">
                 <div id="modal">
-                    <form action="login.php" method="post" autocomplete="off">
-                        <h1>Login!</h1>
-                        <hr>
-                        <div>
-                            <label for="nome">Nome:</label> <br>
-                            <input type="text" placeholder="Insira o seu nome " name="nome_login" id="nome" required>
+                    <div class="wrapper">
+                        <div class="form-box login">
+                            <h2>Login!</h2>
+                            <span class="fechar-modal">&times;</span>
+
+                            <form action="login.php" method="POST">
+                                <div class="input-box">
+                                    <input type="email" name="email" required>
+                                    <label for="">Email</label>
+                                    <span class="icone"><img src="Imagens/Icons/mail-outline.svg" alt=""></span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="password" name="senha" required>
+                                    <label for="">Senha</label>
+                                    <span class="icone"><img src="Imagens/Icons/lock-closed-outline.svg" alt=""></span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="check"> Concordo com os termos
+                                </div>
+                                <button type="submit" class="botao">Entrar</button>
+                                <div class="login-cadastro">
+                                    <p>Ainda não tem conta?</p>
+                                    <p class="cadastro-link">Cadastre-se</p>
+                                </div>
+                            </form>
                         </div>
-                        <div>
-                            <label for="email">E-mail:</label> <br>
-                            <input type="email" placeholder="Insira o seu email" name="email_login" id="email" required>
+
+                        <div class="form-box cadastro">
+                            <h2>Cadastro!</h2>
+                            <span class="fechar-modal">&times;</span>
+
+                            <form method="POST" action="cadastro.php">
+                                <div class="input-box">
+                                    <input type="text" name="nome" required>
+                                    <label for="">Nome</label>
+                                    <span class="icone"><img src="Imagens/Icons/person-outline.svg" alt="user"></span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="email" name="email" required>
+                                    <label for="">Email</label>
+                                    <span class="icone"><img src="Imagens/Icons/mail-outline.svg" alt=""></span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="password" name="senha" required>
+                                    <label for="">Senha</label>
+                                    <span class="icone"><img src="Imagens/Icons/lock-closed-outline.svg" alt=""></span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="password" name="confirmar_senha" required>
+                                    <label for="">Confirmar senha</label>
+                                    <span class="icone"><img src="Imagens/Icons/lock-closed-outline.svg" alt=""></span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="check"> Concordo com os termos
+                                </div>
+                                <button type="submit" class="botao">Cadastrar</button>
+                                <div class="login-cadastro">
+                                    <p>Já tem conta?</p>
+                                    <p class="login-link">Faça login</p>
+                                </div>
+                            </form>
                         </div>
-                        <div>
-                            <label for="senha1">Senha:</label> <br>
-                            <input type="password" placeholder="Insira uma senha" name="senha_login" id="senha1" required>
-                        </div>
-                        <div class="botoes">
-                            <button id="fechar-modal">Cancelar</button>
-                            <button type="submit" id="btn-entrar">Entrar</button>
-                        </div>
-                        
-                        <p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
-                    </form>
+
+                    </div>
                 </div>
             </div>
         </section>
