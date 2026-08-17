@@ -11,7 +11,9 @@
 
 <body>
     <header>
-        <img src="Imagens/Logos/4-removebg-preview.png" alt="Logotipo" id="logo">
+        <a href="index.php" class="logo-link">
+            <img src="Imagens/Logos/4-removebg-preview.png" alt="Logotipo" id="logo">
+        </a>
 
         <div class="input-pesquisa">
             <input type="text" placeholder="Pesquisa">
