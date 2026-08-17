@@ -12,14 +12,11 @@
 <body>
     <header>
         <img src="Imagens/Logos/4-removebg-preview.png" alt="Logotipo" id="logo">
-        <nav id="links-cabeça">
-            <a href="categorias/categoria-homem.html">Homem</a>
-            <a href="categorias/categotia-mulher.html">Mulher</a>
-            <a href="categorias/categoria-crianca.html">Criança</a>
-            <a href="categorias/categoria-sapatos.html">Sapatos</a>
-            <a href="categorias/categoria-calcas.html">Calças</a>
-            <a href="categorias/categoria-calcoes.html">Calções</a>
-        </nav>
+
+        <div class="input-pesquisa">
+            <input type="text" placeholder="Pesquisa">
+        </div>
+
         <div id="loja">
             <nav>
                 <a href="#"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
@@ -27,21 +24,40 @@
 
                 <a href="#"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho"></a>
 
-                <a><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
+                <a href="#"><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
             </nav>
-            <input type="text" placeholder="Pesquisa">
+
         </div>
     </header>
+
     <main>
+        <div class="nav-links-externo">
+            <nav id="nav-links">
+                <a href="categorias/categoria-homem.html">Homem</a>
+                <a href="categorias/categotia-mulher.html">Mulher</a>
+                <a href="categorias/categoria-crianca.html">Criança</a>
+                <a href="categorias/categoria-sapatos.html">Sapatos</a>
+                <a href="categorias/categoria-calcas.html">Calças</a>
+                <a href="categorias/categoria-calcoes.html">Calções</a>
+            </nav>
+        </div>
         <section id="formulario">
             <div id="modal-box">
                 <div id="modal">
-                    <div class="wrapper">
+                    <div id="wrapper" class="wrapper">
                         <div class="form-box login">
+                            <?php if (isset($erro)): ?>
+                                <p style="color: red;"><?= $erro ?></p>
+                            <?php endif; ?>
+
+                            <?php if (isset($sucesso)): ?>
+                                <p style="color: green;"><?= $sucesso ?></p>
+                            <?php endif; ?>
+
                             <h2>Login!</h2>
                             <span class="fechar-modal">&times;</span>
 
-                            <form action="login.php" method="POST">
+                            <form action="pages/login.php" method="POST">
                                 <div class="input-box">
                                     <input type="email" name="email" required>
                                     <label for="">Email</label>
@@ -58,16 +74,23 @@
                                 <button type="submit" class="botao">Entrar</button>
                                 <div class="login-cadastro">
                                     <p>Ainda não tem conta?</p>
-                                    <p class="cadastro-link">Cadastre-se</p>
+                                    <p id="cadastro-link">Cadastre-se</p>
                                 </div>
                             </form>
                         </div>
 
                         <div class="form-box cadastro">
+                            <?php if (isset($erro)): ?>
+                                <p style="color: red;"><?= $erro ?></p>
+                            <?php endif; ?>
+
+                            <?php if (isset($sucesso)): ?>
+                                <p style="color: green;"><?= $sucesso ?></p>
+                            <?php endif; ?>
                             <h2>Cadastro!</h2>
                             <span class="fechar-modal">&times;</span>
 
-                            <form method="POST" action="cadastro.php">
+                            <form method="POST" action="pages/cadastro.php">
                                 <div class="input-box">
                                     <input type="text" name="nome" required>
                                     <label for="">Nome</label>
@@ -94,7 +117,7 @@
                                 <button type="submit" class="botao">Cadastrar</button>
                                 <div class="login-cadastro">
                                     <p>Já tem conta?</p>
-                                    <p class="login-link">Faça login</p>
+                                    <p id="login-link">Faça login</p>
                                 </div>
                             </form>
                         </div>

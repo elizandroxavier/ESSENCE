@@ -32,13 +32,13 @@ header {
     background-color: black;
     display: flex;
     flex-direction: row;
-    margin-bottom: 40px;
-    padding: 13px 5px;
-    width: 100%;
-    height: 16.5vh;
+    padding: 10px 5px;
+    width: 100vw;
+    height: 80px;
     position: sticky;
     z-index: 1;
     top: 0;
+    justify-content: space-between;
 }
 
 header::before {
@@ -52,7 +52,9 @@ header::before {
 }
 
 header #logo {
-    width: 10%;
+    max-width: 130px;
+    max-height: 130px;
+    background-color: #9a9895;
     cursor: pointer;
 }
 
@@ -60,52 +62,6 @@ header #logo img {
     width: 100%;
 }
 
-header #links-cabeça {
-    color: white;
-    margin-top: 4.5%;
-    padding: 6px 12px;
-    width: 70%;
-    gap: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-header #links-cabeça a {
-    font-size: 2.3rem;
-    color: white;
-    background-color: transparent;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    display: inline-block;
-    /* garante que margin horizontal funcione se necessário */
-    padding: 6px 8px;
-    transition: 0.2s;
-    position: relative;
-}
-
-header #links-cabeça a::after {
-    content: " ";
-    width: 0%;
-    height: 4px;
-    background-color: white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: 0.5s ease-in-out;
-}
-
-header #links-cabeça a:hover::after {
-    width: 100%;
-    background-color: var(--primary);
-}
-
-header #links-cabeça a:hover {
-    transform: scale(1.1);
-    color: var(--primary);
-}
 
 header #loja {
     align-items: center;
@@ -117,15 +73,15 @@ header #loja {
 header #loja nav {
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 6px 8px;
     gap: 20px;
+    width: 200px;
 }
 
 header #loja nav a {
     text-decoration: none;
-    color: white;
-
+    cursor: pointer;
 }
 
 header #loja nav a img {
@@ -135,23 +91,30 @@ header #loja nav a img {
 
 header #loja nav a img:hover {
     transform: scale(1.1);
+    fill: #c23408 !important;
+    filter: brightness(0) invert(1);
 }
-
-header #loja input {
+header .input-pesquisa{
+    width: 500px;
+}
+header .input-pesquisa input {
     height: 1.5vw;
     border: none;
     outline: none;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-top: 13px;
-    padding-left: 5px;
-    padding: 3px 3px 3px 5px;
+    padding: 15px;
     position: relative;
-    width: 70%;
-    top: 13%;
+    width: 100%;
+    border: 1.5px solid transparent;
+    transition: border .3s ease;
 }
 
-header #loja input::placeholder {
+header .input-pesquisa input::placeholder {
     font-size: 1rem;
+}
+header .input-pesquisa input:hover{
+    border: 1.5px solid var(--primary);
 }
 
 main {
@@ -161,8 +124,58 @@ main {
     align-items: center;
     width: 100%;
     min-height: 85vh; 
-    gap: 20px;
-    padding-top: 20px; 
+    gap: 20px; 
+}
+main .nav-links-extreno{
+    width: 100vw;
+    height: 50px;
+}
+main #nav-links {
+    background-color: #c23408;
+    color: white;
+    padding: 5px 12px;
+    width: 100vw;
+    height: 100%;
+    gap: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+main #nav-links a {
+    font-size: 1.3rem;
+    color: white;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    /* garante que margin horizontal funcione se necessário */
+    padding: 6px 8px;
+    transition: 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+
+main #nav-links a::after {
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+
+main #nav-links a:hover::after {
+    width: 100%;
+    background-color: var(--primary);
+}
+
+main #nav-links a:hover {
+    transform: scale(1.1);
+    color: var(--primary);
 }
 main #formulario #modal-box{
     width: 100vw;
@@ -195,8 +208,9 @@ main #formulario #modal-box.aberto #modal{
     position: relative;
     width: 400px;
     height: 420px;
-    background: radial-gradient(circle, #e8410a,#c23408);
+    background: radial-gradient(circle,#c23408, #e8410a);
     border: 2px solid white;
+    color: white;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.41);
     border-radius: 20px;
     backdrop-filter: blur(20px);
@@ -206,7 +220,7 @@ main #formulario #modal-box.aberto #modal{
     transition: .5s;
     overflow: hidden;
 }
-.wrapper.active{
+.wrapper.activo{
     height: 560px;
 }
 .wrapper .fechar-modal{
@@ -232,7 +246,7 @@ main #formulario #modal-box.aberto #modal{
     background-color: transparent;
     color: white;
 }
-.wrapper.active .form-box.login{
+.wrapper.activo .form-box.login{
     transition: none;
     transform: translateX(-400px);
 }
@@ -245,7 +259,7 @@ main #formulario #modal-box.aberto #modal{
     transition: none;
     transform: translateX(400px);
 }
-.wrapper.active .form-box.cadastro{
+.wrapper.activo .form-box.cadastro{
     transition: transform .18s ease;
     transform: translateX(0);
 }
@@ -338,11 +352,11 @@ main #formulario #modal-box.aberto #modal{
     justify-content: center;
     align-items: center;
 }
-.wrapper .form-box form .login-cadastro .cadastro-link, .login-link{
+.wrapper .form-box form .login-cadastro #cadastro-link, #login-link{
     cursor: pointer;
 }
-.wrapper .form-box form .login-cadastro .cadastro-link:hover,
-.wrapper .form-box form .login-cadastro .login-link:hover{
+.wrapper .form-box form .login-cadastro #cadastro-link:hover,
+.wrapper .form-box form .login-cadastro #login-link:hover{
     text-decoration: underline;
 }
 

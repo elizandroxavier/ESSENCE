@@ -1,36 +1,46 @@
 const botoes = document.querySelectorAll('.botaoComprar');
 
-        function trocarTexto(botao, novoTexto) {
-            setTimeout(() => {
-                botao.textContent = novoTexto;
-            }, 50);
-        }
+function trocarTexto(botao, novoTexto) {
+    setTimeout(() => {
+        botao.textContent = novoTexto;
+    }, 50);
+}
 
-        botoes.forEach(btn => {
-            const textoOriginal = btn.textContent;
-            
-            btn.addEventListener('mouseenter', () => trocarTexto(btn, 'Comprar!', -1));
-            btn.addEventListener('mouseleave', () => trocarTexto(btn, textoOriginal, 1));
+botoes.forEach(btn => {
+    const textoOriginal = btn.textContent;
+    btn.addEventListener('mouseenter', () => trocarTexto(btn, 'Comprar!'));
+    btn.addEventListener('mouseleave', () => trocarTexto(btn, textoOriginal));
+});
+
+const btnAbrirModal = document.getElementById('abrir-modal');
+const btnFecharModal = document.querySelectorAll('.fechar-modal');
+const modalBox = document.getElementById('modal-box');
+
+if (btnAbrirModal && modalBox) {
+    btnAbrirModal.addEventListener('click', function(){
+        modalBox.classList.add('aberto');
+    });
+}
+
+if (btnFecharModal && modalBox) {
+    btnFecharModal.forEach(btn => {
+        btn.addEventListener('click', function(){
+            modalBox.classList.remove('aberto');
         });
+    });
+}
 
-const btnAbrirModal = document.getElementById('abrir-modal')
-const btnFecharModal = document.querySelectorAll('.fechar-modal')
-const modalBox = document.getElementById('modal-box')
+const wrapper = document.getElementById('wrapper');
+const loginLink = document.getElementById('login-link');
+const cadastroLink = document.getElementById('cadastro-link');
 
-btnAbrirModal.addEventListener('click', function(){
-    modalBox.classList.add('aberto')
-})
-btnFecharModal.addEventListener('click', function(){
-    modalBox.classList.remove('aberto');
-})
-
-const wrapper = document.querySelectorAll('.wrapper');
-const loginLink = document.querySelectorAll('.login-link');
-const cadastroLink = document.querySelectorAll('.cadastro-link');
-
-cadastroLink.addEventListener('click', () =>{
-    wrapper.classList.add('active')
-})
-loginLink.addEventListener('click', () =>{
-    wrapper.classList.remove('active')
-})
+if (cadastroLink && wrapper) {
+    cadastroLink.addEventListener('click', () =>{
+        wrapper.classList.add('activo');
+    });
+}
+if (loginLink && wrapper) {
+    loginLink.addEventListener('click', () =>{
+        wrapper.classList.remove('activo');
+    });
+}
