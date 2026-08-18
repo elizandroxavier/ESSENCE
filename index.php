@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESSENCE</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="styles/padrao.css">
+    <link rel="stylesheet" href="styles/estilo-main.css">
     <link rel="shortcut icon" href="Imagens/Logos/4-removebg-preview.png" type="image/x-icon">
 </head>
 
@@ -127,177 +128,99 @@
                 </div>
             </div>
         </section>
-        <div class="main-cards">
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
-                        </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
 
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+        <div class="main-cards-externo">
+            <div class="main-header">
+                <div>
+                    <div class="main-header-title"><h2>Em <span>Destaque</span></h2></div>
+                    <div class="main-header-subtitulo"><p>Os produtos mais populares do mês</p></div>
+                </div>
+                
+                <div class="ver-todos"><a href="#">Ver Todos</a></div>
+            </div>
+            <div class="main-cards">
+                <section class="card">
+                    <a href="src/compra.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                                class="foto-produto">
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+                    </a>
+                </section>
+                <section class="card">
+                    <a href="src/compra.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                                class="foto-produto">
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+                    </a>
+                </section>
+                <section class="card">
+                    <a href="src/compra.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                                class="foto-produto">
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+                    </a>
+                </section>
+                <section class="card">
+                    <a href="src/compra.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                                class="foto-produto">
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
-            <section class="card">
-                <a href="compra.html" class="produto">
-                    <div class="div-foto-produto">
-                        <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
-                            class="foto-produto">
-                    </div>
-                    <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                        <div class="linha">
-                            <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                            <p class="cores">3 cores</p>
+                    </a>
+                </section>
+                <section class="card">
+                    <a href="src/compra.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                                class="foto-produto">
                         </div>
-                        <button class="botaoComprar" onclick="location.href='compra.html'">Kzs 30.999</button>
-
-                    </div>
-                </a>
-            </section>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
+                        </div>
+                    </a>
+                </section>
+               
+            </div>
         </div>
 
         <div class="flash-strip">
@@ -333,11 +256,50 @@
         </section>
     </main>
     <footer>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum cupiditate placeat est laudantium nobis, itaque
-            asperiores, assumenda ipsa sunt numquam eum nesciunt! Numquam repellendus eaque consectetur illo, quos eos
-            tempora.</p>
+        <div class="descricao-marca">
+            <a href="index.php" >
+            <img src="Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo-footer"></a>
+
+            <div class="descricao-empresa"><p>A sua loja de moda e estilo em Angola. <br>Qualidade premium aos melhores preços,</br> com entrega rápida em todo o país.</p></div>
+
+            <div class="redes-sociais">
+                <a href="#" class="card-redes" id="facebook">f</a>
+
+                <a href="#" class="card-redes" id="instagram">I</a>
+
+                <a href="#" class="card-redes" id="twitter">X</a>
+
+                <a href="#" class="card-redes" id="whatsapp">W</a>
+            </div>
+        </div>
+        <div class="coluna">
+            <h4>Empresa</h4>
+            <ul>
+                <li>Sobre nós</li>
+                <li>Carreira</li>
+                <li>Parceiros</li>
+                <li>Afiliados</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <h4>Ajuda</h4>
+            <ul>
+                <li>Centro de ajuda</li>
+                <li>Devolucões</li>
+                <li>Trocas</li>
+                <li>Contactos</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <h4>Lei</h4>
+            <ul>
+                <li>Política de privacidade</li>
+                <li>Termos de uso</li>
+                <li>Cookies</li>
+            </ul>
+        </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

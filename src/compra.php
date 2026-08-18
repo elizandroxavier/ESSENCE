@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra</title>
+    <link rel="stylesheet" href="../styles/padrao.css">
+</head>
+<body>
+    <header>
+        <a href="index.php" class="logo-link">
+            <img src="../Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo">
+        </a>
+        <div class="nav-links-externo">
+            <nav id="nav-links">
+                <a href="categorias/categoria-homem.html">Homem</a>
+                <a href="categorias/categotia-mulher.html">Mulher</a>
+                <a href="categorias/categoria-crianca.html">Criança</a>
+                <a href="categorias/categoria-sapatos.html">Sapatos</a>
+                <a href="categorias/categoria-calcas.html">Calças</a>
+                <a href="categorias/categoria-calcoes.html">Calções</a>
+                <a href="categorias/categoria-calcoes.html">Chinelos</a>
+            </nav>
+        </div>
+        <div id="loja">
+            <nav>
+                <a href="#"><img src="../Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt="Favorito"></a>
+
+                <a href="#"><img src="../Imagens/Icons/carrinho.svg" alt="Carrinho"></a>
+
+                <a href="#"><img src="../Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
+            </nav>
+            <div class="input-pesquisa">
+                <input type="text" placeholder="Pesquisa">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="formulario">
+            <div id="modal-box">
+                <div id="modal">
+                    <div id="wrapper" class="wrapper">
+                        <div class="form-box login">
+                            <?php if (isset($erro)): ?>
+                                <p style="color: red;"><?= $erro ?></p>
+                            <?php endif; ?>
+
+                            <?php if (isset($sucesso)): ?>
+                                <p style="color: green;"><?= $sucesso ?></p>
+                            <?php endif; ?>
+
+                            <h2>Login!</h2>
+                            <span class="fechar-modal">&times;</span>
+
+                            <form action="../pages/login.php" method="POST">
+                                <div class="input-box">
+                                    <input type="email" name="email" required>
+                                    <label for="">Email</label>
+                                    <span class="icone"><img src="../Imagens/Icons/mail-outline.svg" alt=""></span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="password" name="senha" required>
+                                    <label for="">Senha</label>
+                                    <span class="icone"><img src="../Imagens/Icons/lock-closed-outline.svg" alt=""></span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="check"> Concordo com os termos
+                                </div>
+                                <button type="submit" class="botao">Entrar</button>
+                                <div class="login-cadastro">
+                                    <p>Ainda não tem conta?</p>
+                                    <p id="cadastro-link">Cadastre-se</p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="form-box cadastro">
+                            <?php if (isset($erro)): ?>
+                                <p style="color: red;"><?= $erro ?></p>
+                            <?php endif; ?>
+
+                            <?php if (isset($sucesso)): ?>
+                                <p style="color: green;"><?= $sucesso ?></p>
+                            <?php endif; ?>
+                            <h2>Cadastro!</h2>
+                            <span class="fechar-modal">&times;</span>
+
+                            <form method="POST" action="../pages/cadastro.php">
+                                <div class="input-box">
+                                    <input type="text" name="nome" required>
+                                    <label for="">Nome</label>
+                                    <span class="icone"><img src="../Imagens/Icons/person-outline.svg" alt="user"></span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="email" name="email" required>
+                                    <label for="">Email</label>
+                                    <span class="icone"><img src="../Imagens/Icons/mail-outline.svg" alt=""></span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="password" name="senha" required>
+                                    <label for="">Senha</label>
+                                    <span class="icone"><img src="../Imagens/Icons/lock-closed-outline.svg" alt=""></span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="password" name="confirmar_senha" required>
+                                    <label for="">Confirmar senha</label>
+                                    <span class="icone"><img src="../Imagens/Icons/lock-closed-outline.svg" alt=""></span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="check"> Concordo com os termos
+                                </div>
+                                <button type="submit" class="botao">Cadastrar</button>
+                                <div class="login-cadastro">
+                                    <p>Já tem conta?</p>
+                                    <p id="login-link">Faça login</p>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="layout-produto">
+            <div class="imagens-produto">
+                <img src="Imagens/Vendo/Gemini_Generated_Image_2w6yc62w6yc62w6y-Cópia.png" alt="Imagem do produto" class="prdt-img" onmouseenter="trocar()">
+
+                <img src="Imagens/Vendo/Gemini_Generated_Image_3qloz83qloz83qlo.png" alt="Imagem do produto" class="prdt-img" onmouseenter="trocar()">
+
+                <img src="Imagens/Vendo/Gemini_Generated_Image_3qloz83qloz83qlo.png" alt="Imagem do produto" class="prdt-img" onmouseenter="trocar()">
+                
+                <img src="Imagens/Vendo/Gemini_Generated_Image_3qloz83qloz83qlo.png" alt="Imagem do produto" class="prdt-img" onmouseenter="trocar()">
+            </div>
+            <div class="imagem-central">
+                <img src="Imagens/Vendo/Gemini_Generated_Image_2w6yc62w6yc62w6y.png" alt="Imagem do produto" class="img-central">
+            </div>
+            <div class="painel-compra">
+                <p class="descrição-produto">Terno esportivo  de corrida masculino. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eligendi unde dolor nostrum. Magni hic quo blanditiis, iste neque necessitatibus, perferendis, dolorum facilis ipsa cumque perspiciatis accusantium voluptatibus adipisci incidunt.</p>
+                <p class="preço-produto"><strong>Preço:</strong> Ksz 30.999</p>
+                <p class="desconto-produto"><strong>Desconto:</strong><em><del> Kzs 37.679</del></em></p>
+                <div class="botoes">
+                    <button class="comprar" id="botaoComprar" data-preço="Kzs 30.999" onclick="location.href=''">Comprar</button>
+                    <button class="addcarrinho">Adicionar ao carrinho</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="descricao-marca">
+            <a href="index.php" >
+            <img src="../Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo-footer"></a>
+
+            <div class="descricao-empresa"><p>A sua loja de moda e estilo em Angola. <br>Qualidade premium aos melhores preços,</br> com entrega rápida em todo o país.</p></div>
+
+            <div class="redes-sociais">
+                <a href="#" class="card-redes" id="facebook">f</a>
+
+                <a href="#" class="card-redes" id="instagram">I</a>
+
+                <a href="#" class="card-redes" id="twitter">X</a>
+
+                <a href="#" class="card-redes" id="whatsapp">W</a>
+            </div>
+        </div>
+        <div class="coluna">
+            <h4>Empresa</h4>
+            <ul>
+                <li>Sobre nós</li>
+                <li>Carreira</li>
+                <li>Parceiros</li>
+                <li>Afiliados</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <h4>Ajuda</h4>
+            <ul>
+                <li>Centro de ajuda</li>
+                <li>Devolucões</li>
+                <li>Trocas</li>
+                <li>Contactos</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <h4>Lei</h4>
+            <ul>
+                <li>Política de privacidade</li>
+                <li>Termos de uso</li>
+                <li>Cookies</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
+</html>
