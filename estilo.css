@@ -34,11 +34,10 @@ header {
     flex-direction: row;
     padding: 10px 5px;
     width: 100vw;
-    height: 80px;
+    height: 85px;
     position: sticky;
     z-index: 1;
     top: 0;
-    justify-content: space-between;
 }
 
 header::before {
@@ -51,8 +50,8 @@ header::before {
     z-index: -1;
 }
 header .logo-link{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 70px;
 }
 header #logo {
     width: 100%;
@@ -61,19 +60,22 @@ header #logo {
 }
 
 header #loja {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 10px 20px 10px;
-    width: 30%;
-    gap: 10px;
+    justify-content: right;
+    width: 20%;
+    gap: 5px;
 }
 
 header #loja nav {
     display: flex;
     text-align: center;
-    justify-content: space-between;
+    width: 150px;
+    height: 30px;
     padding: 6px 8px;
     gap: 20px;
-    width: 200px;
+    justify-content: right;
 }
 
 header #loja nav a {
@@ -88,21 +90,20 @@ header #loja nav a img {
 
 header #loja nav a img:hover {
     transform: scale(1.1);
-    fill: #c23408 !important;
-    filter: brightness(0) invert(1);
 }
 header .input-pesquisa{
-    width: 500px;
+    width: 100%;
+    height: 20px;
 }
 header .input-pesquisa input {
-    height: 1.5vw;
+    height: 100%;    
+    width: 100%;
     border: none;
     outline: none;
     border-radius: 12px;
     margin-top: 13px;
-    padding: 15px;
+    padding: 10px;
     position: relative;
-    width: 100%;
     border: 1.5px solid transparent;
     transition: border .3s ease;
 }
@@ -122,25 +123,26 @@ main {
     width: 100%;
     min-height: 85vh; 
     gap: 20px; 
+    background-color: var(--bg);
 }
-main .nav-links-extreno{
-    width: 100vw;
+.nav-links-extreno{
+    width: 60%;
+    background-color: white;
     height: 50px;
 }
-main #nav-links {
-    background-color: #c23408;
+#nav-links {
     color: white;
     padding: 5px 12px;
-    width: 100vw;
+    width: 100%;
     height: 100%;
-    gap: 18px;
+    gap: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-main #nav-links a {
+#nav-links a {
     font-size: 1.3rem;
     color: white;
     background-color: transparent;
@@ -154,7 +156,7 @@ main #nav-links a {
     cursor: pointer;
 }
 
-main #nav-links a::after {
+#nav-links a::after {
     content: " ";
     width: 0%;
     height: 4px;
@@ -165,12 +167,12 @@ main #nav-links a::after {
     transition: 0.5s ease-in-out;
 }
 
-main #nav-links a:hover::after {
+#nav-links a:hover::after {
     width: 100%;
     background-color: var(--primary);
 }
 
-main #nav-links a:hover {
+#nav-links a:hover {
     transform: scale(1.1);
     color: var(--primary);
 }
@@ -191,7 +193,9 @@ main #formulario #modal-box.aberto{
     z-index: 1000;
 }
 main #formulario #modal-box.aberto #modal{
+    border-radius: 20px;
     animation: .5s modal ;
+    background-color: black;
 }
 @keyframes modal {
     from{
@@ -205,7 +209,7 @@ main #formulario #modal-box.aberto #modal{
     position: relative;
     width: 400px;
     height: 420px;
-    background: radial-gradient(circle,#c23408, #e8410a);
+    background: linear-gradient(-45deg,#e8410a51, transparent 90%);
     border: 2px solid white;
     color: white;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.41);
@@ -363,8 +367,8 @@ main .main-cards {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding: 30px 20px;
-    margin: 0 55px;
+    padding: 20px;
+    margin: 0 35px;
     flex-wrap: wrap;
     /*Impede que os elementos saiam pelas laterais*/
     box-sizing: border-box;
@@ -377,24 +381,25 @@ main .card {
     flex-wrap: wrap;/*Garante que nunca passa da largura  da mãe*/
     border-radius: 8px;
     align-items: center;
-    width: 16vw;
-    height: 400px;
+    width: 200px;
+    height: 330px;
     max-width: 100%;
-    
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.423);
 }
 
 main .card .produto {
     width: 100%;
-    height: 500px;
+    height: 100%;
     border-radius: 13px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.2s;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.315);
 }
 
 main .card .produto .div-foto-produto {
     width: 100%;
-    border-radius: 8px;
+    height: 60%;
     overflow: hidden;
     position: relative;
 }
@@ -403,8 +408,7 @@ main .card .produto .div-foto-produto .foto-produto {
     display: flex;
     gap: 16px;
     width: 100%;
-    height: 250px;
-    border-radius: 8px;
+    height: 100%;
     border-end-end-radius: 0;
     transition: transform .3s ease;
 }
@@ -417,9 +421,10 @@ main .card .produto .conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border-radius: 13px;
     gap: 15px;
-    width: 90%;
+    width: 100%;
     padding: 15px;
     cursor: auto;
     color: var(--text-primary);
@@ -432,27 +437,31 @@ main .card .produto .conteudo .linha {
 }
 
 main .card .produto .conteudo .descrição-produto {
-    text-align: center;
-    font-size: .9rem;
+    font-size: .75rem;
     font-weight: bold;
 }
 
 main .card .produto .conteudo .linha .desconto-produto {
     text-align: center;
     border-radius: 18px;
-    font-size: 1.3em;
+    font-size: 1rem;
     font-weight: normal;
-    color: var(--primary);
+    color: #e8410a8a;
+    text-decoration: line-through;
+}
+main .card .produto .conteudo .linha .cores{
+    font-size: .7rem;
+    color: var(--text-secondary);
 }
 
 main .card .produto .conteudo .botaoComprar {
     position: relative;
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     border-radius: 18px;
     padding-left: 4px;
-    font-size: 1.7rem;
-    font-weight: normal;
+    font-size: 1.3rem;
+    font-weight: bold;
     border: none;
     outline: none;
     color: white;
@@ -471,21 +480,19 @@ main .card .produto .conteudo .botaoComprar::before {
     animation: moverCor 7s linear infinite;
     z-index: 0;
 }
+main .card .produto .conteudo .botaoComprar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white;
+}
 
 @keyframes moverCor {
     0% {
         background-position: 0% 50%;
     }
-
     100% {
         background-position: 200% 50%;
     }
-}
-
-main .card .produto .conteudo .botaoComprar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    color: white;
 }
 
 .flash-strip {

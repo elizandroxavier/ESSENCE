@@ -12,13 +12,19 @@
 <body>
     <header>
         <a href="index.php" class="logo-link">
-            <img src="Imagens/Logos/4-removebg-preview.png" alt="Logotipo" id="logo">
+            <img src="Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo">
         </a>
-
-        <div class="input-pesquisa">
-            <input type="text" placeholder="Pesquisa">
+        <div class="nav-links-externo">
+            <nav id="nav-links">
+                <a href="categorias/categoria-homem.html">Homem</a>
+                <a href="categorias/categotia-mulher.html">Mulher</a>
+                <a href="categorias/categoria-crianca.html">Criança</a>
+                <a href="categorias/categoria-sapatos.html">Sapatos</a>
+                <a href="categorias/categoria-calcas.html">Calças</a>
+                <a href="categorias/categoria-calcoes.html">Calções</a>
+                <a href="categorias/categoria-calcoes.html">Chinelos</a>
+            </nav>
         </div>
-
         <div id="loja">
             <nav>
                 <a href="#"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
@@ -28,21 +34,14 @@
 
                 <a href="#"><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
             </nav>
-
+            <div class="input-pesquisa">
+                <input type="text" placeholder="Pesquisa">
+            </div>
         </div>
     </header>
 
     <main>
-        <div class="nav-links-externo">
-            <nav id="nav-links">
-                <a href="categorias/categoria-homem.html">Homem</a>
-                <a href="categorias/categotia-mulher.html">Mulher</a>
-                <a href="categorias/categoria-crianca.html">Criança</a>
-                <a href="categorias/categoria-sapatos.html">Sapatos</a>
-                <a href="categorias/categoria-calcas.html">Calças</a>
-                <a href="categorias/categoria-calcoes.html">Calções</a>
-            </nav>
-        </div>
+
         <section id="formulario">
             <div id="modal-box">
                 <div id="modal">
@@ -136,7 +135,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -153,7 +152,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -170,7 +169,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -187,7 +186,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -204,7 +203,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -221,7 +220,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -238,7 +237,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -255,7 +254,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -272,7 +271,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
@@ -289,7 +288,7 @@
                             class="foto-produto">
                     </div>
                     <div class="conteudo">
-                        <p class="descrição-produto">Terno esportivo equipamento de corrida masculino</p>
+                        <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
                         <div class="linha">
                             <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                             <p class="cores">3 cores</p>
