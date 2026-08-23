@@ -106,7 +106,45 @@ header .input-pesquisa input::placeholder {
     font-size: 1rem;
 }
 header .input-pesquisa input:hover{
-    border: 1.5px solid var(--primary);
+    border-color: var(--primary);
+}
+
+header.header-compra > .input-pesquisa {
+    width: min(42vw, 520px);
+    height: 34px;
+    align-self: center;
+    margin: 0 auto;
+}
+
+header.header-compra > .input-pesquisa input {
+    height: 34px;
+    margin-top: 0;
+}
+
+header:has(.nav-links-externo) .input-pesquisa {
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 10px 16px;
+    }
+
+    header.header-compra > .input-pesquisa {
+        width: min(42vw, 240px);
+    }
+
+    header:has(.nav-links-externo) {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 85px;
+    }
+
+    header:has(.nav-links-externo) .nav-links-externo {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+    }
 }
 .nav-links-externo{
     bottom: 0;
@@ -365,7 +403,6 @@ footer .descricao-marca{
     align-items: center;
     gap: 20px;
     width: 25%;
-    
 }
 footer .descricao-marca #nome-empresa-footer{
     color: white;

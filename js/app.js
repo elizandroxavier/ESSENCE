@@ -30,6 +30,14 @@ if (btnFecharModal && modalBox) {
     });
 }
 
+if (modalBox){
+    modalBox.addEventListener('click', (evento) => {
+        if(evento.target === modalBox){
+            modalBox.classList.remove('aberto')
+        }
+    })
+}
+
 const wrapper = document.getElementById('wrapper');
 const loginLink = document.getElementById('login-link');
 const cadastroLink = document.getElementById('cadastro-link');
@@ -43,4 +51,28 @@ if (loginLink && wrapper) {
     loginLink.addEventListener('click', () =>{
         wrapper.classList.remove('activo');
     });
+}
+
+const btnAbrirCart = document.getElementById('btn-abrir-cart')
+const btnFecharCart = document.getElementById('btn-fechar-cart')
+const Cart = document.getElementById('cart')
+
+if (btnAbrirCart && Cart){
+    btnAbrirCart.addEventListener('click', () =>{
+        Cart.classList.add('activo')
+    })
+}
+
+if (btnFecharCart && Cart){
+    btnFecharCart.addEventListener('click', () =>{
+        Cart.classList.remove('activo')
+    })
+}
+
+if (Cart){
+    Cart.addEventListener('click', (evento) =>{
+        if (evento.target === Cart){
+            Cart.classList.remove('activo')
+        }
+    })
 }

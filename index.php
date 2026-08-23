@@ -36,7 +36,7 @@
                 <a href="#"><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
             </nav>
             <div class="input-pesquisa">
-                <input type="text" placeholder="Pesquisa">
+                <input type="search" placeholder="Pesquisa">
             </div>
         </div>
     </header>
@@ -140,7 +140,7 @@
             </div>
             <div class="main-cards">
                 <section class="card">
-                    <a href="src/compra.php" class="produto">
+                    <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
                             <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
                                 class="foto-produto">
@@ -151,12 +151,12 @@
                                 <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
-                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
                         </div>
                     </a>
                 </section>
                 <section class="card">
-                    <a href="src/compra.php" class="produto">
+                    <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
                             <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
                                 class="foto-produto">
@@ -167,12 +167,12 @@
                                 <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
-                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
                         </div>
                     </a>
                 </section>
                 <section class="card">
-                    <a href="src/compra.php" class="produto">
+                    <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
                             <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
                                 class="foto-produto">
@@ -183,12 +183,12 @@
                                 <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
-                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
                         </div>
                     </a>
                 </section>
                 <section class="card">
-                    <a href="src/compra.php" class="produto">
+                    <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
                             <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
                                 class="foto-produto">
@@ -199,12 +199,12 @@
                                 <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
-                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
                         </div>
                     </a>
                 </section>
                 <section class="card">
-                    <a href="src/compra.php" class="produto">
+                    <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
                             <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
                                 class="foto-produto">
@@ -215,7 +215,7 @@
                                 <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
-                            <button class="botaoComprar" onclick="location.href='src/compra.php'">Kzs 30.999</button>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
                         </div>
                     </a>
                 </section>
