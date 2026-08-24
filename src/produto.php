@@ -11,7 +11,7 @@
 
 <body>
     <header class="header-compra">
-        <a href="index.php" class="logo-link">
+        <a href="../index.php" class="logo-link">
             <img src="../Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo">
         </a>
         <div class="input-pesquisa">
@@ -22,7 +22,7 @@
                 <a href="#"><img src="../Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
                         alt="Favorito"></a>
 
-                <a href="#"><img src="../Imagens/Icons/carrinho.svg" alt="Carrinho"></a>
+                <a href="#"><img src="../Imagens/Icons/carrinho.svg" alt="Carrinho" class="btn-abrir-cart"></a>
 
                 <a href="#"><img src="../Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
             </nav>
@@ -115,13 +115,13 @@
                 </div>
             </div>
         </section>
-        <section class="layout-produto">
+        <section class="card-produto">
             <div class="produto">
                 <div class="imagem-central">
                     <img src="../Imagens/Roupas/casaco-cinza.jfif" class="img-central">
                 </div>
                 <div class="imagens-produtos">
-                    <img src="../Imagens/Roupas/casaco-cinza.jfif" class="prdt-img active">
+                    <img src="../Imagens/Roupas/casaco-cinza.jfif" class="prdt-img activo">
                     <img src="../Imagens/Roupas/casaco-dourado.png" alt="Imagem do produto" class="prdt-img">
                     <img src="../Imagens/Roupas/Casaco-street.jfif" class="prdt-img">
                     <img src="../Imagens/Vendo/Gemini_Generated_Image_2w6yc62w6yc62w6y-Cópia.png" alt="Imagem do produto" class="prdt-img">
@@ -149,7 +149,7 @@
                     <p>Cor - Preto</p>
                     <div class="cores-disponiveis-inner">
                         <div class="cor activo" style="background: red;"></div>
-                        <div class="cor activo" style="background: green;"></div>
+                        <div class="cor" style="background: green;"></div>
                         <div class="cor" style="background: blue;"></div>
                     </div>
                 </div>
@@ -206,6 +206,96 @@
                 </div>
             </div>
         </section>
+        <div class="main-cards-externo">
+            <div class="main-header">
+                <div>
+                    <div class="main-header-title"><h2>Produtos <span>Relacionados</span></h2></div>
+                </div>
+                
+            </div>
+            <div class="main-cards">
+                <section class="card">
+                    <a href="src/produto.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="../Imagens/Roupas/casaco-colorido.png" alt="Foto"
+                                class="foto-produto">
+                        </div>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
+                        </div>
+                    </a>
+                </section>
+                <section class="card">
+                    <a href="src/produto.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="../Imagens/Roupas/Casaco-street.jfif" alt="Foto"
+                                class="foto-produto">
+                        </div>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
+                        </div>
+                    </a>
+                </section>
+                <section class="card">
+                    <a href="src/produto.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="../Imagens/Roupas/casaco-cinza.jfif" alt="Foto"
+                                class="foto-produto">
+                        </div>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
+                        </div>
+                    </a>
+                </section>
+                <section class="card">
+                    <a href="src/produto.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="../Imagens/Roupas/casaco-leite.png" alt="Foto"
+                                class="foto-produto">
+                        </div>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
+                        </div>
+                    </a>
+                </section>
+                <section class="card">
+                    <a href="src/produto.php" class="produto">
+                        <div class="div-foto-produto">
+                            <img src="../Imagens/Roupas/polo-dourada.png" alt="Foto"
+                                class="foto-produto">
+                        </div>
+                        <div class="conteudo">
+                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <div class="linha">
+                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="cores">3 cores</p>
+                            </div>
+                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
+                        </div>
+                    </a>
+                </section>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="descricao-marca">

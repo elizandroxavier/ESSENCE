@@ -55,6 +55,7 @@ main .main-cards {
 }
 
 main .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-white);
@@ -67,6 +68,20 @@ main .card {
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.423);
 }
+main .card .favorito{
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.164);
+    transition: transform .2s ease-in-out;
+}
+.favorito:hover{transform: scale(1.1);}
+main .card .favorito img{width: 100%; color: #3d2015;}
 
 main .card .produto {
     width: 100%;

@@ -18,14 +18,14 @@ const modalBox = document.getElementById('modal-box');
 
 if (btnAbrirModal && modalBox) {
     btnAbrirModal.addEventListener('click', function(){
-        modalBox.classList.add('aberto');
+        modalBox.classList.add('activo');
     });
 }
 
 if (btnFecharModal && modalBox) {
     btnFecharModal.forEach(btn => {
         btn.addEventListener('click', function(){
-            modalBox.classList.remove('aberto');
+            modalBox.classList.remove('activo');
         });
     });
 }
@@ -33,7 +33,7 @@ if (btnFecharModal && modalBox) {
 if (modalBox){
     modalBox.addEventListener('click', (evento) => {
         if(evento.target === modalBox){
-            modalBox.classList.remove('aberto')
+            modalBox.classList.remove('activo')
         }
     })
 }
@@ -53,13 +53,15 @@ if (loginLink && wrapper) {
     });
 }
 
-const btnAbrirCart = document.getElementById('btn-abrir-cart')
+const btnAbrirCart = document.querySelectorAll('.btn-abrir-cart')
 const btnFecharCart = document.getElementById('btn-fechar-cart')
 const Cart = document.getElementById('cart')
 
 if (btnAbrirCart && Cart){
-    btnAbrirCart.addEventListener('click', () =>{
-        Cart.classList.add('activo')
+    btnAbrirCart.forEach (btn =>{
+        btn.addEventListener('click', () =>{
+            Cart.classList.add('activo')
+        })
     })
 }
 
@@ -70,9 +72,46 @@ if (btnFecharCart && Cart){
 }
 
 if (Cart){
-    Cart.addEventListener('click', (evento) =>{
+    Cart.addEventListener('', (evento) =>{
         if (evento.target === Cart){
             Cart.classList.remove('activo')
         }
     })
 }
+
+// Deixa selecionado o elemento que for clicado removendo o anterior 
+
+const prdtImgCentral = document.querySelector('.img-central')
+const produtoImg = document.querySelectorAll('.prdt-img')
+
+produtoImg.forEach(produto =>{
+    produto.addEventListener('click', () =>{
+        produtoImg.forEach(pdt => pdt.classList.remove('activo'))
+        produto.classList.add('activo')
+
+        prdtImgCentral.style.opacity = 0
+        setTimeout(() => {
+            prdtImgCentral.src = produto.src
+            prdtImgCentral.style.opacity = 1
+        }, 150)
+    })
+})
+
+
+const cores = document.querySelectorAll('.cor')
+
+cores.forEach(cor => {
+    cor.addEventListener('click', () =>{
+        cores.forEach(c => c.classList.remove('activo'))
+        cor.classList.add('activo')
+    })
+})
+
+const tamanhos = document.querySelectorAll('.tamanho')
+
+tamanhos.forEach(tamanho =>{
+    tamanho.addEventListener('click', () => {
+        tamanhos.forEach(t => t.classList.remove('activo'))
+        tamanho.classList.add('activo')
+    })
+})

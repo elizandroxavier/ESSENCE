@@ -31,7 +31,7 @@
                 <a href="#"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
                         alt="Favorito"></a>
 
-                <a href="#"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho"></a>
+                <a href="#"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho" class="btn-abrir-cart"></a>
 
                 <a href="#"><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
             </nav>
@@ -40,9 +40,7 @@
             </div>
         </div>
     </header>
-
     <main>
-
         <section id="formulario">
             <div id="modal-box">
                 <div id="modal">
@@ -129,6 +127,38 @@
             </div>
         </section>
 
+        <section class="cart-fundo" id="cart">
+            <div class="cart-sidebar">
+                <div class="cart-header">
+                    <h3>Carrinho</h3>
+                    <button class="fechar-cart" id="btn-fechar-cart">&times;</button>
+                </div> 
+                <div class="cart-items">
+                    <img src="../Imagens/Roupas/casaco-cinza.jfif" alt="Foto produto">
+                    
+                        <div class="cart-info">
+                            <h4 class="item-nome">Terno esportivo de corrida masculino.</h4>
+                            <h4 class="item-preco">Kzs 30.999</h4>
+                            <div class="cart-item-qtd">
+                                <div class="cart-ctrl-qtd">
+                                    <button class="cart-btn-qtd" id="btn-menos">-</button>
+                                    <span class="qtd-num">2</span>
+                                    <button class="cart-btn-qtd" id="btn-mais">+</button>
+                                </div>
+                                <button class="eliminar-produto">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Total</span>
+                        <span class="cart-total-valor">10.000 kzs</span>
+                    </div>
+                    <button class="cart-btn-compra">Finalizar compra</button>
+                </div>
+            </div>
+        </section>
+
         <div class="main-cards-externo">
             <div class="main-header">
                 <div>
@@ -140,9 +170,10 @@
             </div>
             <div class="main-cards">
                 <section class="card">
+                    <button class="favorito"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></button>
                     <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                            <img src="Imagens/Roupas/casaco-colorido.png" alt="Foto"
                                 class="foto-produto">
                         </div>
                         <div class="conteudo">
@@ -158,7 +189,7 @@
                 <section class="card">
                     <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                            <img src="Imagens/Roupas/Casaco-street.jfif" alt="Foto"
                                 class="foto-produto">
                         </div>
                         <div class="conteudo">
@@ -174,7 +205,7 @@
                 <section class="card">
                     <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                            <img src="Imagens/Roupas/casaco-cinza.jfif" alt="Foto"
                                 class="foto-produto">
                         </div>
                         <div class="conteudo">
@@ -190,7 +221,7 @@
                 <section class="card">
                     <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                            <img src="Imagens/Roupas/casaco-leite.png" alt="Foto"
                                 class="foto-produto">
                         </div>
                         <div class="conteudo">
@@ -206,7 +237,7 @@
                 <section class="card">
                     <a href="src/produto.php" class="produto">
                         <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/Gemini_Generated_Image_30lzvs30lzvs30lz.png" alt="Foto"
+                            <img src="Imagens/Roupas/polo-dourada.png" alt="Foto"
                                 class="foto-produto">
                         </div>
                         <div class="conteudo">
@@ -219,7 +250,6 @@
                         </div>
                     </a>
                 </section>
-               
             </div>
         </div>
 
