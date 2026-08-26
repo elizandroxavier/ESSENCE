@@ -1,0 +1,103 @@
+:root {
+    --primary: #e8410a;
+    --primary-dark: #c23408;
+    --primary-light: #ff6535;
+    --gold: #f5a623;
+    --gold-light: #ffc453;
+    --bg: #f7f5f2;
+    --bg-white: #ffffff;
+    --bg-dark: #111110;
+    --text-primary: #1a1917;
+    --text-secondary: #5a5855;
+    --text-muted: #9a9895;
+    --fusco: rgba(104, 102, 102, 0.92);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+main{
+    padding: 40px 80px;
+}
+form{
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.316);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    border-radius: 10px;
+    gap: 20px;
+}
+h1{font-size: 2.3rem;font-weight: bold;color: black;}
+h1 span{color: var(--primary);}
+input[type="file"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+.file-input{
+    position: relative;
+    width: 85%;
+    height: 100px;
+    border: 2px dashed #e8410aa8;
+    border-radius: var(--radius-md);
+    background: rgba(232, 65, 10, 0.04);
+    transition: background-color .2s, border-color .2s;
+}
+.file-input label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+.file-input:hover,
+.file-input:focus-within {
+    border-color: var(--primary);
+    background: rgba(232, 65, 10, 0.1);
+}
+.box-text{
+    display: inline-flex;
+    width: 85%;
+    justify-content: space-between;
+}
+.box-qtd{
+    display: inline-flex;
+    width: 85%;
+    justify-content: space-between;
+}
+.input-box{
+    position: relative;
+    width: 350px;
+    height: 30px;
+    border-bottom: 1.5px solid var(--primary);
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: all .5s ease-in-out;
+    pointer-events: none;
+}
+input{
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+.input-box input:focus~label, .input-box input:valid~label{
+    top: -1px;
+}
+.box-qtd .input-box{
+    width: 25%;
+}

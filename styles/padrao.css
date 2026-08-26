@@ -318,7 +318,7 @@ main #formulario #modal-box.activo #modal{
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    transition: .5s;
+    transition: all .5s;
     pointer-events: none;
 }
 .wrapper .form-box form .input-box input:focus~label,

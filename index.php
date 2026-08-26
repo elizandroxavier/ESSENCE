@@ -198,7 +198,7 @@
                         <p>Os produtos mais populares do mês</p>
                     </div>
                     <?php  if ($admin): ?>
-                        <button class="novo-prdt">+ Novo Produto</button>
+                        <button class="novo-prdt" onclick="location.href='pages/produto_form.php'">+ Novo Produto</button>
                     <?php endif; ?>
                 </div>
 
