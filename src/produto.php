@@ -1,3 +1,24 @@
+<?php
+    session_start();
+    require_once '../pages/conexao.php';
+
+    $id = $_GET['id'] ?? NULL;
+
+    if(!$id){
+        header("Location: ../index.php");
+        exit;
+    }else{
+        $sql = $pdo->prepare("SELECT * FROM produtos WHERE id=?");
+        $sql->execute([$id]);
+        $produto = $sql->fetch(PDO::FETCH_ASSOC);
+
+        if(!$produto){
+            header("Location: ../index.php");
+            exit;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,17 +139,17 @@
         <section class="card-produto">
             <div class="produto">
                 <div class="imagem-central">
-                    <img src="../Imagens/Roupas/casaco-cinza.jfif" class="img-central">
+                    <img src="../Imagens/Roupas/<?= htmlspecialchars($produto['imagem']) ?>" class="img-central">
                 </div>
                 <div class="imagens-produtos">
-                    <img src="../Imagens/Roupas/casaco-cinza.jfif" class="prdt-img activo">
+                    <img src="../Imagens/Roupas/<?= htmlspecialchars($produto['imagem']) ?>" class="prdt-img activo">
                     <img src="../Imagens/Roupas/casaco-dourado.png" alt="Imagem do produto" class="prdt-img">
                     <img src="../Imagens/Roupas/Casaco-street.jfif" class="prdt-img">
                     <img src="../Imagens/Vendo/Gemini_Generated_Image_2w6yc62w6yc62w6y-Cópia.png" alt="Imagem do produto" class="prdt-img">
                 </div>
             </div>
             <div class="painel-compra">
-                <p class="nome-produto">Terno esportivo de corrida masculino.</p>
+                <p class="nome-produto"><?= htmlspecialchars($produto['nome']) ?></p>
                 <div class="avaliacao">
                     <div class="estrelas">
                         <div class="estrela">⭐</div>
@@ -142,8 +163,8 @@
                     <div class="qtd-vendido">+ 10.000 vendidos</div>
                 </div>
                 <div class="precario">
-                    <p class="preco-produto">Kzs 30.999</p>
-                    <p class="desconto-produto">Kzs 37.679</p>
+                    <p class="preco-produto">Kzs <?= number_format($produto['preco'], 0, ',', '.') ?></p>
+                    <p class="preco-antigo">Kzs <?= number_format($produto['preco_antigo'], 0, ',', '.')?></p>
                 </div>
                 <div class="cores-disponiveis">
                     <p>Cor - Preto</p>
@@ -216,14 +237,14 @@
             <div class="main-cards">
                 <section class="card">
                     <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
+                        <div class="box-foto-prdt">
                             <img src="../Imagens/Roupas/casaco-colorido.png" alt="Foto"
-                                class="foto-produto">
+                                class="foto-prdt">
                         </div>
                         <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo de corrida masculino</p>
+                            <p class="nome-prdt">Terno esportivo de corrida masculino</p>
                             <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="preco-antigo"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
                             <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
@@ -232,14 +253,14 @@
                 </section>
                 <section class="card">
                     <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
+                        <div class="box-foto-prdt">
                             <img src="../Imagens/Roupas/Casaco-street.jfif" alt="Foto"
-                                class="foto-produto">
+                                class="foto-prdt">
                         </div>
                         <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <p class="nome-prdt">Terno esportivo  de corrida masculino</p>
                             <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="preco-antigo"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
                             <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
@@ -248,14 +269,14 @@
                 </section>
                 <section class="card">
                     <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
+                        <div class="box-foto-prdt">
                             <img src="../Imagens/Roupas/casaco-cinza.jfif" alt="Foto"
-                                class="foto-produto">
+                                class="foto-prdt">
                         </div>
                         <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <p class="nome-prdt">Terno esportivo  de corrida masculino</p>
                             <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="preco-antigo"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
                             <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
@@ -264,14 +285,14 @@
                 </section>
                 <section class="card">
                     <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
+                        <div class="box-foto-prdt">
                             <img src="../Imagens/Roupas/casaco-leite.png" alt="Foto"
-                                class="foto-produto">
+                                class="foto-prdt">
                         </div>
                         <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <p class="nome-prdt">Terno esportivo  de corrida masculino</p>
                             <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="preco-antigo"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
                             <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
@@ -280,14 +301,14 @@
                 </section>
                 <section class="card">
                     <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
+                        <div class="box-foto-prdt">
                             <img src="../Imagens/Roupas/polo-dourada.png" alt="Foto"
-                                class="foto-produto">
+                                class="foto-prdt">
                         </div>
                         <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
+                            <p class="nome-prdt">Terno esportivo  de corrida masculino</p>
                             <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
+                                <p class="preco-antigo"><em><del>Kzs 37.679</del></em></p>
                                 <p class="cores">3 cores</p>
                             </div>
                             <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>

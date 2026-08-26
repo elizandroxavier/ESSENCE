@@ -1,3 +1,25 @@
+<?php
+    session_start();
+    require_once 'pages/conexao.php';
+
+    $produtos = $pdo->query("SELECT * FROM produtos")->fetchAll(PDO::FETCH_ASSOC);
+    $erro = $_SESSION['erro'] ?? "";
+    $sucesso = $_SESSION['sucesso'] ?? "";
+
+    unset($_SESSION['erro'], $_SESSION['sucesso']);
+
+    $admin = ($_SESSION['usuario_id'] ?? 'admin') === 'admin';
+
+    if($admin && isset($_GET['apagar'])){
+        $sql = $pdo->prepare("DELETE FROM produtos WHERE id=?");
+        $sql->execute([$_GET['apagar']]);
+        header("Location: ../index.php");
+        exit;
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -8,9 +30,16 @@
     <link rel="stylesheet" href="styles/padrao.css">
     <link rel="stylesheet" href="styles/estilo-main.css">
     <link rel="shortcut icon" href="Imagens/Logos/4-removebg-preview.png" type="image/x-icon">
+    
 </head>
 
 <body>
+    <svg style="display: none;">
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </symbol>
+    </svg>
+
     <header>
         <a href="index.php" class="logo-link">
             <img src="Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo">
@@ -46,11 +75,11 @@
                 <div id="modal">
                     <div id="wrapper" class="wrapper">
                         <div class="form-box login">
-                            <?php if (isset($erro)): ?>
+                            <?php if (!empty($erro)): ?>
                                 <p style="color: red;"><?= $erro ?></p>
                             <?php endif; ?>
 
-                            <?php if (isset($sucesso)): ?>
+                            <?php if (!empty($sucesso)): ?>
                                 <p style="color: green;"><?= $sucesso ?></p>
                             <?php endif; ?>
 
@@ -132,23 +161,23 @@
                 <div class="cart-header">
                     <h3>Carrinho</h3>
                     <button class="fechar-cart" id="btn-fechar-cart">&times;</button>
-                </div> 
+                </div>
                 <div class="cart-items">
                     <img src="../Imagens/Roupas/casaco-cinza.jfif" alt="Foto produto">
-                    
-                        <div class="cart-info">
-                            <h4 class="item-nome">Terno esportivo de corrida masculino.</h4>
-                            <h4 class="item-preco">Kzs 30.999</h4>
-                            <div class="cart-item-qtd">
-                                <div class="cart-ctrl-qtd">
-                                    <button class="cart-btn-qtd" id="btn-menos">-</button>
-                                    <span class="qtd-num">2</span>
-                                    <button class="cart-btn-qtd" id="btn-mais">+</button>
-                                </div>
-                                <button class="eliminar-produto">&times;</button>
+
+                    <div class="cart-info">
+                        <h4 class="item-nome">Terno esportivo de corrida masculino.</h4>
+                        <h4 class="item-preco">Kzs 30.999</h4>
+                        <div class="cart-item-qtd">
+                            <div class="cart-ctrl-qtd">
+                                <button class="cart-btn-qtd" id="btn-menos">-</button>
+                                <span class="qtd-num">2</span>
+                                <button class="cart-btn-qtd" id="btn-mais">+</button>
                             </div>
+                            <button class="eliminar-produto">&times;</button>
                         </div>
                     </div>
+                </div>
                 <div class="cart-footer">
                     <div class="cart-total">
                         <span>Total</span>
@@ -162,94 +191,45 @@
         <div class="main-cards-externo">
             <div class="main-header">
                 <div>
-                    <div class="main-header-title"><h2>Em <span>Destaque</span></h2></div>
-                    <div class="main-header-subtitulo"><p>Os produtos mais populares do mês</p></div>
+                    <div class="main-header-title">
+                        <h2>Em <span>Destaque</span></h2>
+                    </div>
+                    <div class="main-header-subtitulo">
+                        <p>Os produtos mais populares do mês</p>
+                    </div>
+                    <?php  if ($admin): ?>
+                        <button class="novo-prdt">+ Novo Produto</button>
+                    <?php endif; ?>
                 </div>
-                
+
                 <div class="ver-todos"><a href="#">Ver Todos</a></div>
             </div>
             <div class="main-cards">
-                <section class="card">
-                    <button class="favorito"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></button>
-                    <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/casaco-colorido.png" alt="Foto"
-                                class="foto-produto">
-                        </div>
-                        <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo de corrida masculino</p>
-                            <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                                <p class="cores">3 cores</p>
+                <?php foreach ($produtos as $produto): ?>
+                    <section class="card">
+                        <button class="favorito"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></button>
+                        <a href="src/produto.php?id=<?= $produto['id'] ?>" class="produto">
+                            <div class="box-foto-prdt">
+                                <img src="Imagens/Roupas/<?= htmlspecialchars($produto['imagem']) ?>" alt="Foto"
+                                    class="foto-prdt">
                             </div>
-                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
-                        </div>
-                    </a>
-                </section>
-                <section class="card">
-                    <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/Casaco-street.jfif" alt="Foto"
-                                class="foto-produto">
-                        </div>
-                        <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                            <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                                <p class="cores">3 cores</p>
+                            <div class="conteudo">
+                                <p class="nome-prdt"><?= htmlspecialchars($produto['descricao']) ?></p>
+                                <div class="linha">
+                                    <p class="preco-antigo">Kzs <?= number_format($produto['preco_antigo'], 0, ',', '.') ?></p>
+                                    <p class="cores"><?= htmlspecialchars($produto['cores']) ?> Cores</p>
+                                </div>
+                                <span class="botaoComprar">Kzs <?= number_format($produto['preco'], 0, ',', '.') ?></span>
                             </div>
-                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
-                        </div>
-                    </a>
-                </section>
-                <section class="card">
-                    <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/casaco-cinza.jfif" alt="Foto"
-                                class="foto-produto">
-                        </div>
-                        <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                            <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                                <p class="cores">3 cores</p>
+                        </a>
+                        <?php if($admin): ?>
+                            <div class="admin-acoes">
+                                <a href="pages/produto_form.php?id=<?= $produto['id'] ?>" class="icon-footer editar"><img src="Imagens/Icons/editar.svg" alt="Editar"></a>
+                                <a href="index.php?apagar=<?= $produto['id'] ?>" onclick="return confirm('Tem certeza que deseja apagar este produto?')" class="icon-footer apagar"><img src="Imagens/Icons/delete.svg" alt="Apagar"></a>
                             </div>
-                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
-                        </div>
-                    </a>
-                </section>
-                <section class="card">
-                    <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/casaco-leite.png" alt="Foto"
-                                class="foto-produto">
-                        </div>
-                        <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                            <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                                <p class="cores">3 cores</p>
-                            </div>
-                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
-                        </div>
-                    </a>
-                </section>
-                <section class="card">
-                    <a href="src/produto.php" class="produto">
-                        <div class="div-foto-produto">
-                            <img src="Imagens/Roupas/polo-dourada.png" alt="Foto"
-                                class="foto-produto">
-                        </div>
-                        <div class="conteudo">
-                            <p class="descrição-produto">Terno esportivo  de corrida masculino</p>
-                            <div class="linha">
-                                <p class="desconto-produto"><em><del>Kzs 37.679</del></em></p>
-                                <p class="cores">3 cores</p>
-                            </div>
-                            <button class="botaoComprar" onclick="location.href='src/produto.php'">Kzs 30.999</button>
-                        </div>
-                    </a>
-                </section>
+                        <?php endif; ?>
+                    </section>
+                <?php endforeach; ?>
             </div>
         </div>
 
@@ -283,14 +263,18 @@
                             <path d="M5 12h14m-7-7 7 7-7 7" />
                         </svg>
                     </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
         <div class="descricao-marca">
-            <a href="index.php" >
-            <img src="Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo-footer"></a>
+            <a href="index.php">
+                <img src="Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo-footer"></a>
 
-            <div class="descricao-empresa"><p>A sua loja de moda e estilo em Angola. <br>Qualidade premium aos melhores preços,</br> com entrega rápida em todo o país.</p></div>
+            <div class="descricao-empresa">
+                <p>A sua loja de moda e estilo em Angola. <br>Qualidade premium aos melhores preços,</br> com entrega rápida em todo o país.</p>
+            </div>
 
             <div class="redes-sociais">
                 <a href="#" class="card-redes" id="facebook">f</a>

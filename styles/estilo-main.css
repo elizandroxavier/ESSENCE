@@ -26,6 +26,21 @@ main .main-header .main-header-title{font-size: 1.2rem;font-weight: bold;
 }
 main .main-header-title span{color: var(--primary);}
 main .main-header-subtitulo{font-size: .85rem; color: var(--text-muted);}
+main .main-header .novo-prdt{
+    padding: 7px 17px; 
+    background: var(--primary); 
+    color: var(--bg); 
+    border: 1.5px solid var(--primary); 
+    border-radius: 10px; 
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+main .main-header .novo-prdt:hover{
+    color: var(--primary);
+    border-color: var(--primary);
+    background-color: var(--bg);
+}
 main .main-header .ver-todos a{
     padding: 7px 17px; 
     background: transparent; 
@@ -63,7 +78,8 @@ main .card {
     border-radius: 8px;
     align-items: center;
     width: 200px;
-    height: 330px;
+    height: 380px;
+    max-height: 400px;
     max-width: 100%;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.423);
@@ -85,21 +101,21 @@ main .card .favorito img{width: 100%; color: #3d2015;}
 
 main .card .produto {
     width: 100%;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
     border-radius: 13px;
     cursor: pointer;
     transition: all 0.2s;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.315);
 }
 
-main .card .produto .div-foto-produto {
+main .card .produto .box-foto-prdt {
     width: 100%;
     height: 60%;
     overflow: hidden;
     position: relative;
 }
 
-main .card .produto .div-foto-produto .foto-produto {
+main .card .produto .box-foto-prdt .foto-prdt {
     display: flex;
     gap: 16px;
     width: 100%;
@@ -108,7 +124,7 @@ main .card .produto .div-foto-produto .foto-produto {
     transition: transform .3s ease;
 }
 
-main .card .produto .div-foto-produto .foto-produto:hover {
+main .card .produto .box-foto-prdt .foto-prdt:hover {
     transform: scale(1.05);
 }
 
@@ -131,12 +147,9 @@ main .card .produto .conteudo .linha {
     width: 100%;
 }
 
-main .card .produto .conteudo .descrição-produto {
-    font-size: .75rem;
-    font-weight: bold;
-}
+main .card .produto .conteudo .nome-prdt {font-size: .75rem;font-weight: bold;}
 
-main .card .produto .conteudo .linha .desconto-produto {
+main .card .produto .conteudo .linha .preco-antigo {
     text-align: center;
     border-radius: 18px;
     font-size: 1rem;
@@ -150,6 +163,9 @@ main .card .produto .conteudo .linha .cores{
 }
 
 main .card .produto .conteudo .botaoComprar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -162,7 +178,7 @@ main .card .produto .conteudo .botaoComprar {
     color: white;
     cursor: pointer;
     background: var(--primary);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    transition: all .3s ease-in-out;
     isolation: isolate;
 }
 
@@ -180,6 +196,22 @@ main .card .produto .conteudo .botaoComprar:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     color: white;
 }
+main .card .admin-acoes{
+    width: 100%;
+    gap: 10px;
+    height: 30px;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+.admin-acoes .icon-footer{display: inline-flex;align-items: center;justify-content: center;width: 35px;height: 25px;border-radius: 10px; cursor: pointer;}
+.admin-acoes .icon-footer img{width: 18px;height: 18px;}
+.icon-footer.editar{border: 1.3px solid #1059f5;background: #1058f58b; transition: all .3s ease-in-out;}
+.icon-footer.editar:hover{background: #1058f5ab; transform: translateY(-2px);}
+.icon-footer.apagar{border: 1.3px solid #e60303; background: #e603058b; transition: all .3s ease-in-out;}
+.icon-footer.apagar:hover{background: #e60305ab; transform: translateY(-2px);}
+
 
 @keyframes moverCor {
     0% {

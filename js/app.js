@@ -72,7 +72,7 @@ if (btnFecharCart && Cart){
 }
 
 if (Cart){
-    Cart.addEventListener('', (evento) =>{
+    Cart.addEventListener('click', (evento) =>{
         if (evento.target === Cart){
             Cart.classList.remove('activo')
         }

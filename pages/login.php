@@ -2,9 +2,6 @@
 session_start();
 require_once 'conexao.php';
 
-$erro = "";
-$sucesso = "";
-
 if($_SERVER["REQUEST_METHOD"] === "POST"){
 
     $email = $_POST["email"];
@@ -19,12 +16,15 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         $_SESSION['usuario_nome'] = $usuario['nome'];
         $_SESSION['usuario_nivel'] = $usuario['nivel'];
 
-        $sucesso = "Logado com sucesso!";
-
+        
         header("Location: ../index.php");
         exit;
     } else{
-        $erro = "E-mail ou senha errada!";
+        $_SESSION['erro'] = "E-mail ou senha errada!";
+        header("Location: ../index.php");
+        exit;
     }
 }
-?>
+
+header("Location: ../index.php");
+exit;
