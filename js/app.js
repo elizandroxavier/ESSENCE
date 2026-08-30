@@ -79,6 +79,18 @@ if (Cart){
     })
 }
 
+
+
+/*const menuBtn = document.querySelectorAll('.menu')
+const barraLateral = document.querySelectorAll('.barra-lateral-externo')
+
+menuBtn.forEach(btn =>{
+    btn.addEventListener('click', () =>{
+        menuBtn.forEach(b => b.classList.toggle('activo'))
+        barraLateral.forEach(b => b.classList.toggle('activo'))
+    })
+})*/
+
 // Deixa selecionado o elemento que for clicado removendo o anterior 
 
 const prdtImgCentral = document.querySelector('.img-central')
@@ -114,4 +126,16 @@ tamanhos.forEach(tamanho =>{
         tamanhos.forEach(t => t.classList.remove('activo'))
         tamanho.classList.add('activo')
     })
+})
+
+
+
+//Adicionar cores e tamanhos no admin
+const addCor = document.getElementById('add-cor')
+const boxCor = document.getElementById('box-cor')
+const addTamanho = document.getElementById('add-tamanho')
+const boxTamanho = document.getElementById('box-tamanho')
+
+addCor.addEventListener('click', () =>{
+    boxCor.innerHTML = "<input type='color'>"
 })

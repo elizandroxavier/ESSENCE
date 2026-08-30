@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'DM Sans', sans-serif;
-    text-decoration: none;
-    box-sizing: border-box;
-}
+* {margin: 0; padding: 0; font-family: 'DM Sans', sans-serif; text-decoration: none; box-sizing: border-box;}
 :root {
     --primary: #e8410a;
     --primary-dark: #c23408;
@@ -24,18 +18,13 @@
     --radius-lg: 16px;
     --radius-xl: 24px;
 }
-body {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 100%;
-    height: 100%;
-}
+body {display: flex; flex-direction: column; background-color: white; width: 100%; height: 100%;}
 header {
     background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, .25);
     padding: 10px 40px;
     width: 100vw;
     height: 85px;
@@ -53,65 +42,108 @@ header::before {
     animation: moverCor 7s linear infinite;
     z-index: -1;
 }
-header .logo-link{
-    width: 80px;
-    height: 70px;
-}
-header #logo {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
+header .logo-link{width: 80px; height: 70px;}
+header #logo {width: 100%; height: 100%; cursor: pointer;}
 
 header #loja {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: right;
+    justify-content: space-between;
     width: 20%;
-    gap: 5px;
+    height: 90%;
 }
 
-header #loja nav {
+header #loja .loja-inner {
     display: flex;
-    text-align: center;
-    width: 150px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     height: 30px;
-    padding: 6px 8px;
-    gap: 20px;
-    justify-content: right;     
     text-decoration: none;
 }
-
-header #loja nav a {cursor: pointer;}
-
-header #loja nav a img {
-    width: 120%;
-    transition: transform .3s ease;
+header #loja .loja-inner .icons-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--bg); 
+    transition: all .3s ease; 
+    border-radius: 15px; 
+    width: 45px;
+    height: 35px;
 }
-header .input-pesquisa{
+header #loja .loja-inner .icons-menu img{width: 65%;}
+header #loja .loja-inner .icons-menu:hover{background: rgb(42, 41, 41);}
+
+/*header .menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 35px;
+    height: 80%;
+    cursor: pointer;
+}
+.menu .linha-menu{
     width: 100%;
-    height: 20px;
+    height: 6px;
+    border-radius: 10px;
+    background: var(--bg);
+    transition: all .3s ease-in-out;
 }
+.menu.activo .linha-menu:nth-child(1){
+    transform: translateY(9px) rotate(-45deg);
+}
+.menu.activo .linha-menu:nth-child(2){
+    opacity: 0;
+}
+.menu.activo .linha-menu:nth-child(3){
+    transform: translateY(-9px) rotate(45deg);
+}
+
+.barra-lateral-externo{
+    width: 100vw;
+    height: calc(100vh - 85px);
+    top: 85px;
+    left: 0;
+    position: fixed;
+    display: none;
+    pointer-events: none;
+}
+.barra-lateral-externo.activo{
+    display: block;
+    z-index: 9;
+}
+.barra-lateral{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(360px, 86vw);
+    height: 100%;
+    background-color: var(--bg-dark);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, .25);
+    pointer-events: auto;
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
+}
+.barra-lateral-externo.activo .barra-lateral{
+    transform: translateX(0);
+}
+*/
+header .input-pesquisa{width: 100%; height: 20px; position: relative;}
 header .input-pesquisa input {
     height: 100%;    
     width: 100%;
     border: none;
     outline: none;
     border-radius: 12px;
-    margin-top: 13px;
     padding: 10px;
-    position: relative;
     border: 1.5px solid transparent;
     transition: border .3s ease;
 }
-
-header .input-pesquisa input::placeholder {
-    font-size: 1rem;
-}
-header .input-pesquisa input:hover{
-    border-color: var(--primary);
-}
+header .input-pesquisa input::placeholder {font-size: 1rem;}
+header .input-pesquisa input:hover{border-color: var(--primary);}
 
 header.header-compra > .input-pesquisa {
     width: min(42vw, 520px);
@@ -120,14 +152,8 @@ header.header-compra > .input-pesquisa {
     margin: 0 auto;
 }
 
-header.header-compra > .input-pesquisa input {
-    height: 34px;
-    margin-top: 0;
-}
-
-header:has(.nav-links-externo) .input-pesquisa {
-    width: 100%;
-}
+header.header-compra > .input-pesquisa input {height: 34px; margin-top: 0;}
+header:has(.nav-links-externo) .input-pesquisa {width: 100%;}
 
 @media (max-width: 700px) {
     header {
@@ -192,15 +218,8 @@ header:has(.nav-links-externo) .input-pesquisa {
     transition: 0.5s ease-in-out;
 }
 
-#nav-links a:hover::after {
-    width: 100%;
-    background-color: var(--primary);
-}
-
-#nav-links a:hover {
-    transform: scale(1.05);
-    color: var(--primary);
-}
+#nav-links a:hover::after {width: 100%;background-color: var(--primary);}
+#nav-links a:hover {transform: scale(1.05); color: var(--primary);}
 
 main #formulario #modal-box{
     width: 100vw;
@@ -218,11 +237,7 @@ main #formulario #modal-box.activo{
     backdrop-filter: blur(5px);
     z-index: 1000;
 }
-main #formulario #modal-box.activo #modal{
-    border-radius: 20px;
-    animation: .5s modal ;
-    background-color: black;
-}
+main #formulario #modal-box.activo #modal{border-radius: 20px; animation: .5s modal; background-color: black;}
 @keyframes modal {
     from{
         transform: translateY(100vh);
@@ -247,9 +262,7 @@ main #formulario #modal-box.activo #modal{
     transition: .5s;
     overflow: hidden;
 }
-.wrapper.activo{
-    height: 560px;
-}
+.wrapper.activo{height: 560px;}
 .wrapper .fechar-modal{
     position: absolute;
     right: 0;
@@ -269,43 +282,14 @@ main #formulario #modal-box.activo #modal{
     justify-content: center;
     align-items: center;
 }
-.wrapper .fechar-modal:hover{
-    background-color: transparent;
-    border-left: 1.5px solid white;
-    border-bottom: 1.5px solid white;
-}
-.wrapper.activo .form-box.login{
-    transition: none;
-    transform: translateX(-400px);
-}
-.wrapper .form-box.login{
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-.wrapper .form-box.cadastro{
-    position: absolute;
-    transition: none;
-    transform: translateX(400px);
-}
-.wrapper.activo .form-box.cadastro{
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-
-.wrapper .form-box{
-    width: 100%;
-    height: 100%;
-    padding: 35px 35px;
-}
-.wrapper .form-box h2{
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-}
-.wrapper .form-box.cadastro{
-    position: absolute;
-    transform: translateX(400px);
-}
+.wrapper .fechar-modal:hover{background-color: transparent;border-left: 1.5px solid white; border-bottom: 1.5px solid white;}
+.wrapper.activo .form-box.login{transition: none; transform: translateX(-400px);}
+.wrapper .form-box.login{transition: transform .18s ease; transform: translateX(0);}
+.wrapper .form-box.cadastro{position: absolute; transition: none; transform: translateX(400px);}
+.wrapper.activo .form-box.cadastro{transition: transform .18s ease; transform: translateX(0);}
+.wrapper .form-box{width: 100%; height: 100%; padding: 35px 35px;}
+.wrapper .form-box h2{text-align: center;font-size: 2rem; font-weight: bold;}
+.wrapper .form-box.cadastro{position: absolute; transform: translateX(400px);}
 .wrapper .form-box form .input-box{
     position: relative;
     width: 100%;
@@ -321,10 +305,7 @@ main #formulario #modal-box.activo #modal{
     transition: all .5s;
     pointer-events: none;
 }
-.wrapper .form-box form .input-box input:focus~label,
-.wrapper .form-box form .input-box input:valid~label{
-    top: -1px;
-}
+.wrapper .form-box form .input-box input:focus~label, .wrapper .form-box form .input-box input:valid~label{top: -1px;}
 .wrapper .form-box form .input-box input{
     width: 100%;
     height: 100%;
@@ -370,24 +351,10 @@ main #formulario #modal-box.activo #modal{
     cursor: pointer;
     margin-bottom: 20px;
 }
-.wrapper .form-box form .botao:hover{
-    transform: translateY(-3px);
-    border: 1.5px solid white;
-    background-color: transparent;
-}
-.wrapper .form-box form .login-cadastro{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.wrapper .form-box form .login-cadastro #cadastro-link, #login-link{
-    cursor: pointer;
-}
-.wrapper .form-box form .login-cadastro #cadastro-link:hover,
-.wrapper .form-box form .login-cadastro #login-link:hover{
-    text-decoration: underline;
-}
+.wrapper .form-box form .botao:hover{transform: translateY(-3px); border: 1.5px solid white; background-color: transparent;}
+.wrapper .form-box form .login-cadastro{display: flex; flex-direction: row; justify-content: center; align-items: center;}
+.wrapper .form-box form .login-cadastro #cadastro-link, #login-link{cursor: pointer;}
+.wrapper .form-box form .login-cadastro #cadastro-link:hover, .wrapper .form-box form .login-cadastro #login-link:hover{text-decoration: underline;}
 
 .cart-fundo{
     position: fixed;
@@ -400,12 +367,7 @@ main #formulario #modal-box.activo #modal{
     background-color: #1a19171c; 
     transition: opacity .5s ease, visibility 0s linear .5s;
 }
-.cart-fundo.activo{
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transition-delay: 0s;
-}
+.cart-fundo.activo{visibility: visible; opacity: 1; pointer-events: auto; transition-delay: 0s;}
 .cart-sidebar{
     position: fixed;
     top: 0;
@@ -421,13 +383,7 @@ main #formulario #modal-box.activo #modal{
     transition: transform .5s ease;
 }
 .cart-fundo.activo .cart-sidebar{transform: translateX(0);}
-.cart-header{
-    width: 100%;
-    padding: 20px 24px; 
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #5a58552e;
-}
+.cart-header{width: 100%; padding: 20px 24px; display: flex; justify-content: space-between; border-bottom: 1px solid #5a58552e;}
 .cart-header h3{font-weight: bold; font-size: 1.7rem;}
 .cart-header .fechar-cart{
     cursor: pointer;
@@ -498,12 +454,7 @@ main #formulario #modal-box.activo #modal{
 }
 .cart-btn-qtd:hover{background: var(--primary); color: var(--bg-white); border-color: transparent;}
 .qtd-num{padding: 0 15px;}
-.cart-footer{
-    width: 100%;
-    border-top: 1px solid #5a58552e;
-    padding: 20px 24px;
-    background: var(--bg);
-}
+.cart-footer{width: 100%; border-top: 1px solid #5a58552e; padding: 20px 24px; background: var(--bg);}
 .cart-total{display: flex; justify-content: space-between; align-items: center;}
 .cart-total span{font-weight: bold;}
 .cart-total-valor{color: var(--primary);font-size: 2rem;}
@@ -540,27 +491,10 @@ footer .descricao-marca{
     gap: 20px;
     width: 25%;
 }
-footer .descricao-marca #nome-empresa-footer{
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-footer .descricao-marca #logo-footer{
-    width: 80px;
-    height: 80px;
-}
-footer .descricao-marca .descricao-empresa{
-    color: var(--text-muted);
-    font-size: .9rem;
-    line-height: 1.4;
-    font-weight: 100;
-}
-footer .redes-sociais{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-}
+footer .descricao-marca #nome-empresa-footer{color: white; font-size: 1.3rem; font-weight: bold;}
+footer .descricao-marca #logo-footer{width: 80px; height: 80px;}
+footer .descricao-marca .descricao-empresa{color: var(--text-muted); font-size: .9rem; line-height: 1.4; font-weight: 100;}
+footer .redes-sociais{display: flex; flex-direction: row; justify-content: space-between; gap: 10px;}
 footer .redes-sociais .card-redes{
     display: flex;
     justify-content: center;
@@ -575,15 +509,8 @@ footer .redes-sociais .card-redes{
     cursor: pointer;
     color: var(--text-muted);
 }
-footer .redes-sociais .card-redes:hover{
-    border: 1.5px solid #e8410a9c;
-    box-shadow: 0 0 10px #e8410a9c;
-}
-footer h4{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
+footer .redes-sociais .card-redes:hover{border: 1.5px solid #e8410a9c; box-shadow: 0 0 10px #e8410a9c;}
+footer h4{font-size: 1.2rem; font-weight: bold; margin-bottom: 20px;}
 footer ul {
     display: flex;
     flex-direction: column;
@@ -593,12 +520,8 @@ footer ul {
     gap: 10px; 
     list-style-type: none;
 }
-footer ul li{
-    transition: all .2s ease;
-}
-footer ul li:hover{
-    color: white;
-}
+footer ul li{transition: all .2s ease;}
+footer ul li:hover{color: white;}
 @keyframes moverCor {
     0% {
         background-position: 0% 50%;

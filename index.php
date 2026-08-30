@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESSENCE</title>
     <link rel="stylesheet" href="styles/padrao.css">
-    <link rel="stylesheet" href="styles/estilo-main.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="shortcut icon" href="Imagens/Logos/4-removebg-preview.png" type="image/x-icon">
     
 </head>
@@ -49,21 +49,31 @@
                 <a href="categorias/categoria-homem.html">Homem</a>
                 <a href="categorias/categotia-mulher.html">Mulher</a>
                 <a href="categorias/categoria-crianca.html">Criança</a>
-                <a href="categorias/categoria-sapatos.html">Sapatos</a>
+                <a href="categorias/categoria-sapatos.html">Casacos</a>
                 <a href="categorias/categoria-calcas.html">Calças</a>
                 <a href="categorias/categoria-calcoes.html">Calções</a>
-                <a href="categorias/categoria-calcoes.html">Chinelos</a>
+                <a href="categorias/categoria-calcoes.html">Conjuntos</a>
             </nav>
         </div>
         <div id="loja">
-            <nav>
-                <a href="#"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-                        alt="Favorito"></a>
+            <div class="loja-inner">
+                <span class="icons-menu"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt="Favorito"></span>
+    
+                <span class="icons-menu"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho" class="btn-abrir-cart"></span>
+    
+                <span class="icons-menu"><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></span>
+                <a href="pages/logout.php" class="icons-menu">Sair</a>
+            </div>
 
-                <a href="#"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho" class="btn-abrir-cart"></a>
-
-                <a href="#"><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
-            </nav>
+                <!-- Meterei se necessário
+                <div class="menu">
+                    <div class="linha-menu"></div>
+                    <div class="linha-menu"></div>
+                    <div class="linha-menu"></div>
+                </div>
+                -->
+            </>
             <div class="input-pesquisa">
                 <input type="search" placeholder="Pesquisa">
             </div>
@@ -186,6 +196,10 @@
                     <button class="cart-btn-compra">Finalizar compra</button>
                 </div>
             </div>
+        </section>
+
+        <section class="barra-lateral-externo">
+            <div class="barra-lateral"></div>
         </section>
 
         <div class="main-cards-externo">

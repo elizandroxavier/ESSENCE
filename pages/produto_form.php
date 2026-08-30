@@ -33,31 +33,35 @@
                 <input type="file" id="imagem" name="imagem">
             </div>
             <div class="box-text">
-                <div class="input-box">
-                    <input type="text" name="nome" required>
-                    <label>Nome do produto</label>
-                </div>
-                <div class="input-box">
-                    <input type="text" name="descricao" required>
+                <div class="input-box-textarea">
+                    <textarea name="descricao" required></textarea>
                     <label>Descricão do produto</label>
+                </div>
+                <div class="box-text-inner">
+                    <div class="input-box">
+                        <input type="text" name="nome" required>
+                        <label>Nome do produto</label>
+                    </div>
+                    <div class="precos">
+                        <div class="input-box">
+                            <input type="number" name="preco" required>
+                            <label>Preço</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" name="preco_antigo" required>
+                            <label>Preço antigo</label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="box-qtd">
-                <div class="input-box">
-                    <input type="number" name="preco" readonly required>
-                    <label>Preço do produto</label>
+                <div class="box-qtd-inner" id="box-cor">
+                    <span class="adicionar" id="add-cor">&plus;</span>
+                    <span class="add-text">Adicionar cores</span>
                 </div>
-                <div class="input-box">
-                    <input type="number" name="preco_antigo" readonly>
-                    <label>Preço antigo do produto </label>
-                </div>
-                <div class="input-box">
-                    <input type="number" name="cores" readonly required>
-                    <label>Quantidade de cores</label>
-                </div>
-                <div class="input-box">
-                    <input type="number" name="tamanhos" readonly required>
-                    <label>Quantidade de tamanhos</label>
+                <div class="box-qtd-inner" id="box-tamanho">
+                    <span class="adicionar" id="add-tamanho">&plus;</span>
+                    <span class="add-text">Adicionar tamanhos</span>
                 </div>
             </div>
         </form>
