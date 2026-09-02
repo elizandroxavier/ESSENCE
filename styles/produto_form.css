@@ -138,6 +138,16 @@ input[type="file"]{
     width: 50%;
     gap: 8px;
 }
+#box-cor{
+    flex-direction: column;
+    align-items: flex-start;
+}
+#box-cor input[type="color"]{
+    width: 42px;
+    height: 30px;
+    padding: 2px;
+    cursor: pointer;
+}
 .box-qtd .box-qtd-inner .adicionar{
     padding: 3px 15px;
     background: transparent;
