@@ -133,9 +133,9 @@ tamanhos.forEach(tamanho =>{
 
 //Adicionar cores e tamanhos no admin
 const btnAddColor = document.getElementById("add-cor")
-const btnAddSize = document.getElementById("add-tamanho")
+const btnAddSize = document.getElementById("add-size")
 const conteinerColor = document.getElementById("conteiner-cor")
-const conteinerSize = document.getElementById("conteiner-tamanhos")
+const conteinerSize = document.getElementById("conteiner-size")
 
 if (btnAddColor && conteinerColor) {
     btnAddColor.addEventListener('click', () => {
@@ -150,7 +150,8 @@ if (btnAddSize && conteinerSize) {
     btnAddSize.addEventListener('click', () => {
         const input = document.createElement('input')
         input.type = "text"
-        input.placeholder = "Tamanho"
+        input.classList = "size"
+        input.placeholder = "XL"
         conteinerSize.appendChild(input)
     })
 }

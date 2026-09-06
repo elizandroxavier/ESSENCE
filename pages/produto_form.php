@@ -66,7 +66,10 @@
                 <div class="box-qtd-inner" id="box-size">
                     <span class="adicionar" id="add-size">&plus;</span>
                     <span class="add-text">Adicionar tamanhos</span>
-                    <div class="conteiner-size" id="conteiner-size"></div>
+                    <div class="conteiner-size" id="conteiner-size">
+                        <input type="text" class="size" placeholder="XL">
+                        <input type="text" class="size" placeholder="XL">
+                    </div>
                 </div>
             </div>
         </form>

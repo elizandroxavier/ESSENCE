@@ -165,6 +165,7 @@ input[type="file"]{
     flex-wrap: wrap;
     height: 30px;
     width: 100%;
+    gap: 5px;
 }
 #box-cor input[type="color"]{
     width: 50px;
@@ -172,3 +173,9 @@ input[type="file"]{
     border: none;
     border-radius: 10px;
 }
+#box-size .conteiner-size .size{
+    background: var(--bg);
+    border: 1.5px solid var(--primary);
+    border-radius: var(--radius-md);
+    width: 40px;
+} 
