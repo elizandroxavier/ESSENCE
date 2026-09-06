@@ -1,3 +1,4 @@
+
 const botoes = document.querySelectorAll('.botaoComprar');
 
 function trocarTexto(botao, novoTexto) {
@@ -131,11 +132,25 @@ tamanhos.forEach(tamanho =>{
 
 
 //Adicionar cores e tamanhos no admin
-const addCor = document.getElementById('add-cor')
-const boxCor = document.getElementById('box-cor')
-const addTamanho = document.getElementById('add-tamanho')
-const boxTamanho = document.getElementById('box-tamanho')
+const btnAddColor = document.getElementById("add-cor")
+const btnAddSize = document.getElementById("add-tamanho")
+const conteinerColor = document.getElementById("conteiner-cor")
+const conteinerSize = document.getElementById("conteiner-tamanhos")
 
-addCor.addEventListener('click', () =>{
-    boxCor.innerHTML = "<input type='color'>"
-})
+if (btnAddColor && conteinerColor) {
+    btnAddColor.addEventListener('click', () => {
+        const input = document.createElement('input')
+        input.type = "color"
+        input.classList.add('cor')
+        conteinerColor.appendChild(input)
+    })
+}
+
+if (btnAddSize && conteinerSize) {
+    btnAddSize.addEventListener('click', () => {
+        const input = document.createElement('input')
+        input.type = "text"
+        input.placeholder = "Tamanho"
+        conteinerSize.appendChild(input)
+    })
+}

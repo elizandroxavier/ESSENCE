@@ -133,40 +133,42 @@ input[type="file"]{
 }
 .box-qtd{display: inline-flex;justify-content: space-between; width: 85%;gap: 15px;}
 .box-qtd .box-qtd-inner{
-    display: inline-flex;
+    display: grid;
+    grid-template-areas: 
+        "addBtn text"
+        "conteiner conteiner"
+    ;
     align-items: center;
     width: 50%;
     gap: 8px;
 }
-#box-cor{
-    flex-direction: column;
-    align-items: flex-start;
-}
-#box-cor input[type="color"]{
-    width: 42px;
-    height: 30px;
-    padding: 2px;
-    cursor: pointer;
-}
+#box-cor{grid-area: addBtn; align-items: center;}
+
 .box-qtd .box-qtd-inner .adicionar{
     padding: 3px 15px;
     background: transparent;
     border: 1.5px solid var(--primary);
     color: var(--primary);
     font-weight: 700;
+    width: 40px;
     border-radius: var(--radius-md);
     transition: all .3s ease;
     cursor: pointer;
 }
 .box-qtd-inner .adicionar:hover{background: #e8410a10;}
-.box-qtd-inner .add-text{
-    font-weight: bold;
-}
-.box-qtd .input-box{
-    color: var(--text-secondary);
-    position: relative;
-    width: 150px;
+.box-qtd-inner .add-text{font-weight: bold; width: 100%; grid-area: text;}
+
+.conteiner-cor, .conteiner-size{
+    grid-area: conteiner;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 30px;
-    border: 1.5px solid var(--primary);
-    border-radius: var(--radius-md);
+    width: 100%;
+}
+#box-cor input[type="color"]{
+    width: 50px;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
 }

@@ -58,10 +58,15 @@
                 <div class="box-qtd-inner" id="box-cor">
                     <span class="adicionar" id="add-cor">&plus;</span>
                     <span class="add-text">Adicionar cores</span>
+                    <div class="conteiner-cor" id="conteiner-cor">
+                        <input type="color" name="" id="">
+                        <input type="color" name="" id="">
+                    </div>
                 </div>
-                <div class="box-qtd-inner" id="box-tamanho">
-                    <span class="adicionar" id="add-tamanho">&plus;</span>
+                <div class="box-qtd-inner" id="box-size">
+                    <span class="adicionar" id="add-size">&plus;</span>
                     <span class="add-text">Adicionar tamanhos</span>
+                    <div class="conteiner-size" id="conteiner-size"></div>
                 </div>
             </div>
         </form>
@@ -113,6 +118,7 @@
             </ul>
         </div>
     </footer>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
