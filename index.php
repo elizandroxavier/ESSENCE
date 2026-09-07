@@ -63,17 +63,14 @@
                 <span class="icons-menu"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho" class="btn-abrir-cart"></span>
     
                 <span class="icons-menu"><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></span>
-                <a href="pages/logout.php" class="icons-menu">Sair</a>
-            </div>
-
-                <!-- Meterei se necessário
+                
                 <div class="menu">
                     <div class="linha-menu"></div>
                     <div class="linha-menu"></div>
                     <div class="linha-menu"></div>
                 </div>
-                -->
-            </>
+            </div>
+
             <div class="input-pesquisa">
                 <input type="search" placeholder="Pesquisa">
             </div>
@@ -199,7 +196,28 @@
         </section>
 
         <section class="barra-lateral-externo">
-            <div class="barra-lateral"></div>
+            <div class="barra-lateral">
+                <div class="perfil">
+                    <div class="perfil-img"><img src="Imagens/Icons/pessoa.svg" alt=""></div>
+                    <div class="text-perfil">
+                        <p>Seja bem vindo de volta a</p>
+                        <p style="font-weight: bold;"><span style="color: #e8410a;">ESSENCE</span>, user!</p>
+                    </div>
+                </div>
+                <div class="conteudo-menu">
+                    <a href="#">Meus pedidos</a>
+                    <a href="#">Favoritos</a>
+                    <a href="#">Pagamentos</a>
+                    <a href="#">Favoritos</a>
+                    <a href="#">Configuracões</a>
+                </div>
+                <div class="footer-menu">
+                    <div class="footer-conteudo">
+                        <img src="Imagens/Icons/logout1.svg" alt="">
+                        <span>Sair</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <div class="main-cards-externo">

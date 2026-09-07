@@ -76,30 +76,30 @@ header #loja .loja-inner .icons-menu{
 header #loja .loja-inner .icons-menu img{width: 65%;}
 header #loja .loja-inner .icons-menu:hover{background: rgb(42, 41, 41);}
 
-/*header .menu{
+header .menu{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 35px;
+    width: 30px;
     height: 80%;
     cursor: pointer;
 }
 .menu .linha-menu{
     width: 100%;
-    height: 6px;
+    height: 4.5px;
     border-radius: 10px;
     background: var(--bg);
     transition: all .3s ease-in-out;
 }
 .menu.activo .linha-menu:nth-child(1){
-    transform: translateY(9px) rotate(-45deg);
+    transform: translateY(9.7px) rotate(-45deg);
 }
 .menu.activo .linha-menu:nth-child(2){
     opacity: 0;
 }
 .menu.activo .linha-menu:nth-child(3){
-    transform: translateY(-9px) rotate(45deg);
+    transform: translateY(-9.7px) rotate(45deg);
 }
 
 .barra-lateral-externo{
@@ -110,6 +110,8 @@ header #loja .loja-inner .icons-menu:hover{background: rgb(42, 41, 41);}
     position: fixed;
     display: none;
     pointer-events: none;
+    transition: all .3s linear;
+    color: white;
 }
 .barra-lateral-externo.activo{
     display: block;
@@ -125,12 +127,72 @@ header #loja .loja-inner .icons-menu:hover{background: rgb(42, 41, 41);}
     box-shadow: -8px 0 30px rgba(0, 0, 0, .25);
     pointer-events: auto;
     transform: translateX(100%);
-    transition: transform .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 .barra-lateral-externo.activo .barra-lateral{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
     transform: translateX(0);
 }
-*/
+.barra-lateral .perfil{
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    height: 85px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    border-bottom: 1.5px solid var(--primary);
+    border-radius: var(--radius-lg);
+    transition: all .2s linear;
+}
+.perfil-img{width: 60px;height: 90%; border-radius: 50%; border: 1.5px solid var(--bg); overflow: hidden; transition: all .2s linear; cursor: pointer;}
+.barra-lateral .perfil img{width: 100%;}
+
+.conteudo-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.conteudo-menu a{
+    padding: 3px 12px;
+    border-radius: var(--radius-lg);
+    transition: all .3s ease;
+    border-bottom: 1.5px solid transparent;
+    cursor: pointer;
+    color: var(--bg-white);
+}
+.conteudo-menu a:hover{border-bottom: 1.5px solid var(--primary-dark);}
+.footer-menu{
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.05rem;
+    height: 50px;
+    padding: 10px 20px 5px 20px;
+    border-radius: var(--radius-lg);
+    transition: all .2s ease;
+    border-top: 1.5px solid var(--primary-dark);
+
+    .footer-conteudo{
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 15px;
+        gap: 5px;
+        border-radius: var(--radius-lg);
+        transition: background .3s ease;
+    }
+    .footer-conteudo:hover{background: rgba(255, 0, 0, 0.448);}
+    
+}
+
 header .input-pesquisa{width: 100%; height: 20px; position: relative;}
 header .input-pesquisa input {
     height: 100%;    

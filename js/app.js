@@ -80,17 +80,16 @@ if (Cart){
     })
 }
 
+const menuBtn = document.querySelector('.menu')
+const barraLateral = document.querySelector('.barra-lateral-externo')
 
-
-/*const menuBtn = document.querySelectorAll('.menu')
-const barraLateral = document.querySelectorAll('.barra-lateral-externo')
-
-menuBtn.forEach(btn =>{
-    btn.addEventListener('click', () =>{
-        menuBtn.forEach(b => b.classList.toggle('activo'))
-        barraLateral.forEach(b => b.classList.toggle('activo'))
+if (menuBtn) {
+    menuBtn.addEventListener('click', () =>{
+        menuBtn.classList.toggle('activo')
+        barraLateral.classList.toggle('activo')
     })
-})*/
+}
+
 
 // Deixa selecionado o elemento que for clicado removendo o anterior 
 
