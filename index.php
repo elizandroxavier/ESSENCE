@@ -1,21 +1,21 @@
 <?php
-    session_start();
-    require_once 'pages/conexao.php';
+session_start();
+require_once 'pages/conexao.php';
 
-    $produtos = $pdo->query("SELECT * FROM produtos")->fetchAll(PDO::FETCH_ASSOC);
-    $erro = $_SESSION['erro'] ?? "";
-    $sucesso = $_SESSION['sucesso'] ?? "";
+$produtos = $pdo->query("SELECT * FROM produtos")->fetchAll(PDO::FETCH_ASSOC);
+$erro = $_SESSION['erro'] ?? "";
+$sucesso = $_SESSION['sucesso'] ?? "";
 
-    unset($_SESSION['erro'], $_SESSION['sucesso']);
+unset($_SESSION['erro'], $_SESSION['sucesso']);
 
-    $admin = ($_SESSION['usuario_id'] ?? 'admin') === 'admin';
+$admin = ($_SESSION['usuario_id'] ?? 'admin') === 'admin';
 
-    if($admin && isset($_GET['apagar'])){
-        $sql = $pdo->prepare("DELETE FROM produtos WHERE id=?");
-        $sql->execute([$_GET['apagar']]);
-        header("Location: ../index.php");
-        exit;
-    }
+if ($admin && isset($_GET['apagar'])) {
+    $sql = $pdo->prepare("DELETE FROM produtos WHERE id=?");
+    $sql->execute([$_GET['apagar']]);
+    header("Location: ../index.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +28,9 @@
     <link rel="stylesheet" href="styles/padrao.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="shortcut icon" href="Imagens/Logos/4-removebg-preview.png" type="image/x-icon">
-    
+
 </head>
+
 <body>
     <header>
         <a href="index.php" class="logo-link">
@@ -51,11 +52,11 @@
             <div class="loja-inner">
                 <span class="icons-menu"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
                         alt="Favorito"></span>
-    
+
                 <span class="icons-menu"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho" class="btn-abrir-cart"></span>
-    
+
                 <span class="icons-menu"><img src="Imagens/Icons/user.svg" alt="Login" id="abrir-modal"></span>
-                
+
                 <div class="menu">
                     <div class="linha-menu"></div>
                     <div class="linha-menu"></div>
@@ -70,6 +71,85 @@
         </div>
     </header>
     <main>
+        <div class="main-cards-externo">
+            <div class="main-header">
+                <div>
+                    <div class="main-header-title">
+                        <h2>Em <span>Destaque</span></h2>
+                    </div>
+                    <div class="main-header-subtitulo">
+                        <p>Os produtos mais populares do mês</p>
+                    </div>
+                    <?php if ($admin): ?>
+                        <button class="novo-prdt" onclick="location.href='src/produto_form.php'">+ Novo Produto</button>
+                    <?php endif; ?>
+                </div>
+
+                <div class="ver-todos"><a href="#">Ver Todos</a></div>
+            </div>
+            <div class="main-cards">
+                <?php foreach ($produtos as $produto): ?>
+                    <section class="card">
+                        <button class="favorito"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></button>
+                        <a href="src/produto.php?id=<?= $produto['id'] ?>" class="produto">
+                            <div class="box-foto-prdt">
+                                <img src="Imagens/Roupas/<?= htmlspecialchars($produto['imagem']) ?>" alt="Foto"
+                                    class="foto-prdt">
+                            </div>
+                            <div class="conteudo">
+                                <p class="nome-prdt"><?= htmlspecialchars($produto['descricao']) ?></p>
+                                <div class="linha">
+                                    <p class="preco-antigo">Kzs <?= number_format($produto['preco_antigo'], 0, ',', '.') ?></p>
+                                    <p class="cores"><?= htmlspecialchars($produto['cores']) ?> Cores</p>
+                                </div>
+                                <span class="botaoComprar">Kzs <?= number_format($produto['preco'], 0, ',', '.') ?></span>
+                            </div>
+                        </a>
+                        <?php if ($admin): ?>
+                            <div class="admin-acoes">
+                                <a href="pages/produto_form.php?id=<?= $produto['id'] ?>" class="icon-footer editar"><img src="Imagens/Icons/editar.svg" alt="Editar"></a>
+                                <a href="index.php?apagar=<?= $produto['id'] ?>" onclick="return confirm('Tem certeza que deseja apagar este produto?')" class="icon-footer apagar"><img src="Imagens/Icons/delete.svg" alt="Apagar"></a>
+                            </div>
+                        <?php endif; ?>
+                    </section>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div class="flash-strip">
+            <div class="flash-inner">
+                <div class="flash-item"><strong>FLASH SALE</strong> — Até 60% de desconto</div>
+                <div class="flash-item">🎁 Frete grátis acima de Kzs 15.000</div>
+                <div class="flash-item">Mais de 10.000 produtos disponíveis</div>
+                <div class="flash-item">🛒Entrega em 24-48h em Luanda</div>
+                <div class="flash-item"><strong>FLASH SALE</strong> — Até 60% de desconto</div>
+                <div class="flash-item">🎁 Frete grátis acima de Kzs 15.000</div>
+                <div class="flash-item">Mais de 10.000 produtos disponíveis</div>
+                <div class="flash-item">🛒 Entrega em 24-48h em Luanda</div>
+            </div>
+        </div>
+
+        <section class="conteiner">
+            <div class="hero">
+                <div class="hero-deco"></div>
+                <div class="hero-deco2"></div>
+                <div class="hero-deco3"></div>
+                <div class="p1">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-badge">✦ Nova Colecção 2025</div>
+                    <h1>Vista o Seu <span>Melhor</span> Lado</h1>
+                    <p>Moda premium com os melhores preços de Angola. Descubra peças únicas para cada ocasião.</p>
+                    <div class="hero-cta">
+                        Explorar Agora
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16"
+                            height="16">
+                            <path d="M5 12h14m-7-7 7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="formulario">
             <div id="modal-box">
                 <div id="modal">
@@ -163,7 +243,7 @@
                     <button class="fechar-cart" id="btn-fechar-cart">&times;</button>
                 </div>
                 <div class="cart-items">
-            
+
                     <img src="../Imagens/Roupas/casaco-cinza.jfif" alt="Foto produto">
 
                     <div class="cart-info">
@@ -214,84 +294,7 @@
             </div>
         </section>
 
-        <div class="main-cards-externo">
-            <div class="main-header">
-                <div>
-                    <div class="main-header-title">
-                        <h2>Em <span>Destaque</span></h2>
-                    </div>
-                    <div class="main-header-subtitulo">
-                        <p>Os produtos mais populares do mês</p>
-                    </div>
-                    <?php  if ($admin): ?>
-                        <button class="novo-prdt" onclick="location.href='pages/produto_form.php'">+ Novo Produto</button>
-                    <?php endif; ?>
-                </div>
 
-                <div class="ver-todos"><a href="#">Ver Todos</a></div>
-            </div>
-            <div class="main-cards">
-                <?php foreach ($produtos as $produto): ?>
-                    <section class="card">
-                        <button class="favorito"><img src="Imagens/Icons/favorite_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></button>
-                        <a href="src/produto.php?id=<?= $produto['id'] ?>" class="produto">
-                            <div class="box-foto-prdt">
-                                <img src="Imagens/Roupas/<?= htmlspecialchars($produto['imagem']) ?>" alt="Foto"
-                                    class="foto-prdt">
-                            </div>
-                            <div class="conteudo">
-                                <p class="nome-prdt"><?= htmlspecialchars($produto['descricao']) ?></p>
-                                <div class="linha">
-                                    <p class="preco-antigo">Kzs <?= number_format($produto['preco_antigo'], 0, ',', '.') ?></p>
-                                    <p class="cores"><?= htmlspecialchars($produto['cores']) ?> Cores</p>
-                                </div>
-                                <span class="botaoComprar">Kzs <?= number_format($produto['preco'], 0, ',', '.') ?></span>
-                            </div>
-                        </a>
-                        <?php if($admin): ?>
-                            <div class="admin-acoes">
-                                <a href="pages/produto_form.php?id=<?= $produto['id'] ?>" class="icon-footer editar"><img src="Imagens/Icons/editar.svg" alt="Editar"></a>
-                                <a href="index.php?apagar=<?= $produto['id'] ?>" onclick="return confirm('Tem certeza que deseja apagar este produto?')" class="icon-footer apagar"><img src="Imagens/Icons/delete.svg" alt="Apagar"></a>
-                            </div>
-                        <?php endif; ?>
-                    </section>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-        <div class="flash-strip">
-            <div class="flash-inner">
-                <div class="flash-item"><strong>FLASH SALE</strong> — Até 60% de desconto</div>
-                <div class="flash-item">🎁 Frete grátis acima de Kzs 15.000</div>
-                <div class="flash-item">Mais de 10.000 produtos disponíveis</div>
-                <div class="flash-item">🛒Entrega em 24-48h em Luanda</div>
-                <div class="flash-item"><strong>FLASH SALE</strong> — Até 60% de desconto</div>
-                <div class="flash-item">🎁 Frete grátis acima de Kzs 15.000</div>
-                <div class="flash-item">Mais de 10.000 produtos disponíveis</div>
-                <div class="flash-item">🛒 Entrega em 24-48h em Luanda</div>
-            </div>
-        </div>
-        <section class="conteiner">
-            <div class="hero">
-                <div class="hero-deco"></div>
-                <div class="hero-deco2"></div>
-                <div class="hero-deco3"></div>
-                <div class="p1">
-                </div>
-                <div class="hero-content">
-                    <div class="hero-badge">✦ Nova Colecção 2025</div>
-                    <h1>Vista o Seu <span>Melhor</span> Lado</h1>
-                    <p>Moda premium com os melhores preços de Angola. Descubra peças únicas para cada ocasião.</p>
-                    <div class="hero-cta">
-                        Explorar Agora
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16"
-                            height="16">
-                            <path d="M5 12h14m-7-7 7 7-7 7" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
     <footer>
         <div class="descricao-marca">
@@ -303,9 +306,9 @@
             </div>
 
             <div class="redes-sociais">
-                <a href="#" class="card-redes" id="facebook"><img src="Imagens/Icons/facebook-app-symbol.png" alt="Facebook"></a>
+                <a href="#" class="card-redes" id="facebook"><img src="Imagens/Icons/facebook-app-symbol.png"></a>
 
-                <a href="#" class="card-redes" id="instagram"><img src="Imagens/Icons/instagram.png" alt="Instagram"></a>
+                <a href="#" class="card-redes" id="instagram"><img src="Imagens/Icons/instagram.png"></a>
 
                 <a href="#" class="card-redes" id="twitter"><img src="Imagens/Icons/twitter.png" alt="Twitter"></a>
 
