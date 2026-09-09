@@ -19,7 +19,7 @@
         </div>
         <div id="loja">
             <nav>
-                <a href="#"><img src="../Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
+                <a href="#"><img src="../Imagens/Icons/user.svg" alt="Login" id="abrir-modal"></a>
             </nav>
         </div>
     </header>

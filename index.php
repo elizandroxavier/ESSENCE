@@ -16,8 +16,6 @@
         header("Location: ../index.php");
         exit;
     }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -32,14 +30,7 @@
     <link rel="shortcut icon" href="Imagens/Logos/4-removebg-preview.png" type="image/x-icon">
     
 </head>
-
 <body>
-    <svg style="display: none;">
-        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"></polyline>
-        </symbol>
-    </svg>
-
     <header>
         <a href="index.php" class="logo-link">
             <img src="Imagens/Logos/ESSENCE-removebg-preview.png" alt="Logotipo" id="logo">
@@ -53,6 +44,7 @@
                 <a href="categorias/categoria-calcas.html">Calças</a>
                 <a href="categorias/categoria-calcoes.html">Calções</a>
                 <a href="categorias/categoria-calcoes.html">Conjuntos</a>
+                <button class="btn-add-categoria">&plus;</button>
             </nav>
         </div>
         <div id="loja">
@@ -62,7 +54,7 @@
     
                 <span class="icons-menu"><img src="Imagens/Icons/carrinho.svg" alt="Carrinho" class="btn-abrir-cart"></span>
     
-                <span class="icons-menu"><img src="Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></span>
+                <span class="icons-menu"><img src="Imagens/Icons/user.svg" alt="Login" id="abrir-modal"></span>
                 
                 <div class="menu">
                     <div class="linha-menu"></div>
@@ -73,6 +65,7 @@
 
             <div class="input-pesquisa">
                 <input type="search" placeholder="Pesquisa">
+                <span><img src="Imagens/Icons/pesquisa.svg"></span>
             </div>
         </div>
     </header>
@@ -170,6 +163,7 @@
                     <button class="fechar-cart" id="btn-fechar-cart">&times;</button>
                 </div>
                 <div class="cart-items">
+            
                     <img src="../Imagens/Roupas/casaco-cinza.jfif" alt="Foto produto">
 
                     <div class="cart-info">
@@ -198,10 +192,10 @@
         <section class="barra-lateral-externo">
             <div class="barra-lateral">
                 <div class="perfil">
-                    <div class="perfil-img"><img src="Imagens/Icons/pessoa.svg" alt=""></div>
+                    <div class="perfil-img"><img src="Imagens/Icons/user.svg" alt=""></div>
                     <div class="text-perfil">
                         <p>Seja bem vindo de volta a</p>
-                        <p style="font-weight: bold;"><span style="color: #e8410a;">ESSENCE</span>, user!</p>
+                        <p><span style="color: #e8410a; font-weight: bold;">ESSENCE</span>, Elizandro!</p>
                     </div>
                 </div>
                 <div class="conteudo-menu">

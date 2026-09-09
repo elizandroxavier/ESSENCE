@@ -45,7 +45,7 @@
 
                 <a href="#"><img src="../Imagens/Icons/carrinho.svg" alt="Carrinho" class="btn-abrir-cart"></a>
 
-                <a href="#"><img src="../Imagens/Icons/pessoa.svg" alt="Login" id="abrir-modal"></a>
+                <a href="#"><img src="../Imagens/Icons/user.svg" alt="Login" id="abrir-modal"></a>
             </nav>
 
         </div>
