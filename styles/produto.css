@@ -26,23 +26,28 @@
 }
 button, a{cursor: pointer;}
 main{
-    padding: 40px 20px 20px;
+    padding: 48px clamp(16px, 5vw, 72px) 80px;
     width: 100vw;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg);
+    background: radial-gradient(circle at 12% 8%, rgba(232, 65, 10, .08), transparent 25%), var(--bg);
 }
 .card-produto{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: min(1180px, 100%);
     min-height: 500px;
-    padding: 10px;
+    padding: 18px;
+    gap: clamp(28px, 5vw, 80px);
+    background: rgba(255, 255, 255, .58);
+    border: 1px solid rgba(26, 25, 23, .06);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
     margin-bottom: 150px;
 }
 .produto{
@@ -134,12 +139,13 @@ main{
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 65%;
+    width: min(65%, 560px);
     padding: 20px;
     gap: 20px;
 }
 .nome-produto{
-    font-size: 2rem;
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
     font-weight: bolder;
     line-height: normal;
 }
@@ -160,7 +166,7 @@ main{
     margin-top: 10px;
 }
 .preco-produto{
-    font-size: 3.2rem;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
     font-weight: bolder;
     color: var(--primary);
 }
@@ -246,10 +252,10 @@ main{
 .input-qtd{width: 56px; height: 44px; text-align: center; border: none; border-left: 1.5px solid var(--border); border-right: 1.5px solid var(--border); font-size: 16px; font-weight: 600; background: white;}
 
 .botoes{width: 100%;display: inline-flex; gap: 10px;}
-.btn-comprar{width: 100%; padding: 15px 34px; border-radius: var(--radius-md); border: none; outline: none; background: var(--primary); color: var(--bg-white); font-weight: bold; font-size: 15px; transition: all .3s;}
-.btn-comprar:hover{background-color: var(--primary-dark);}
-.btn-add-carrinho{width: 100%; padding: 15px 34px; border-radius: var(--radius-md); border: none; outline: none; border: 1.5px solid var(--primary); color: var(--primary); font-weight: bold; font-size: 15px; transition: all .3s ease-in-out; background: var(--bg-white);}
-.btn-add-carrinho:hover{background: rgba(232,65,10,0.05);}
+.btn-comprar{width: 100%; padding: 15px 34px; border-radius: var(--radius-md); border: none; outline: none; background: var(--primary); color: var(--bg-white); font-weight: bold; font-size: 15px; transition: all .3s; box-shadow: 0 8px 18px rgba(232, 65, 10, .18);}
+.btn-comprar:hover{background-color: var(--primary-dark); transform: translateY(-2px);}
+.btn-add-carrinho{width: 100%; padding: 15px 34px; border-radius: var(--radius-md); outline: none; border: 1.5px solid var(--primary); color: var(--primary); font-weight: bold; font-size: 15px; transition: all .3s ease-in-out; background: var(--bg-white);}
+.btn-add-carrinho:hover{background: rgba(232,65,10,0.05); transform: translateY(-2px);}
 
 /* CARRINHO */
 

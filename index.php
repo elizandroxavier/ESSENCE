@@ -303,13 +303,13 @@
             </div>
 
             <div class="redes-sociais">
-                <a href="#" class="card-redes" id="facebook">f</a>
+                <a href="#" class="card-redes" id="facebook"><img src="Imagens/Icons/facebook-app-symbol.png" alt="Facebook"></a>
 
-                <a href="#" class="card-redes" id="instagram">I</a>
+                <a href="#" class="card-redes" id="instagram"><img src="Imagens/Icons/instagram.png" alt="Instagram"></a>
 
-                <a href="#" class="card-redes" id="twitter">X</a>
+                <a href="#" class="card-redes" id="twitter"><img src="Imagens/Icons/twitter.png" alt="Twitter"></a>
 
-                <a href="#" class="card-redes" id="whatsapp">W</a>
+                <a href="#" class="card-redes" id="whatsapp"><img src="Imagens/Icons/whatsapp.png" alt="WhatsApp"></a>
             </div>
         </div>
         <div class="coluna">
