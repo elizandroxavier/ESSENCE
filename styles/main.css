@@ -16,16 +16,11 @@ main .main-header{
     flex-direction: row;
     justify-content: space-between;
     padding: 5px 0;
+
+    & div{display: flex;flex-direction: column;justify-content: center;gap: 5px;}
+    & .main-header-title{font-size: 1.2rem;font-weight: bold;  & h2{font-family: 'Syne', sans-serif; letter-spacing: 0;}}
+    
 }
-main .main-header div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-}
-main .main-header .main-header-title{font-size: 1.2rem;font-weight: bold;
-}
-main .main-header .main-header-title h2{font-family: 'Syne', sans-serif; letter-spacing: 0;}
 main .main-header-title span{color: var(--primary);}
 main .main-header-subtitulo{font-size: .85rem; color: var(--text-muted);}
 main .main-header .novo-prdt{
@@ -37,12 +32,10 @@ main .main-header .novo-prdt{
     font-weight: bold;
     transition: all .3s ease-in-out;
     cursor: pointer;
+
+    &:hover{color: var(--primary);border-color: var(--primary);background: var(--bg);}
 }
-main .main-header .novo-prdt:hover{
-    color: var(--primary);
-    border-color: var(--primary);
-    background-color: var(--bg);
-}
+
 main .main-header .ver-todos a{
     padding: 7px 17px; 
     background: transparent; 
@@ -52,11 +45,8 @@ main .main-header .ver-todos a{
     font-weight: bold;
     transition: all .3s;
     cursor: pointer;
-}
-main .main-header .ver-todos a:hover{
-    color: var(--bg);
-    border: 1.5px solid transparent;
-    background-color: var(--primary);
+
+    &:hover{color: var(--bg); border: 1.5px solid transparent;background: var(--primary);}
 }
 main .main-cards {
     display: flex;
@@ -87,8 +77,9 @@ main .card {
     box-shadow: var(--shadow-card);
     border: 1px solid rgba(26, 25, 23, .05);
     transition: transform .25s ease, box-shadow .25s ease;
+
+    &:hover{box-shadow: 0 18px 36px rgba(26, 25, 23, .16);}
 }
-main .card:hover{ box-shadow: 0 18px 36px rgba(26, 25, 23, .16);}
 main .card .favorito{
     position: absolute;
     cursor: pointer;
@@ -100,9 +91,10 @@ main .card .favorito{
     border: none;
     transition: transform .2s ease-in-out;
     background: transparent;
+
+    &:hover{transition: scale(1.05);}
+    & img{width: 100%;}
 }
-.favorito img{width: 100%;}
-.favorito:hover{transform: scale(1.05);}
 
 main .card .produto {
     width: 100%;
@@ -118,19 +110,17 @@ main .card .produto .box-foto-prdt {
     height: 60%;
     overflow: hidden;
     position: relative;
-}
 
-main .card .produto .box-foto-prdt .foto-prdt {
-    display: flex;
-    gap: 16px;
-    width: 100%;
-    height: 100%;
-    border-end-end-radius: 0;
-    transition: transform .3s ease;
-}
+    & .foto-prdt{
+        display: flex;
+        gap: 16px;
+        width: 100%;
+        height: 100%;
+        border-end-end-radius: 0;
+        transition: transform .3s ease;
 
-main .card .produto .box-foto-prdt .foto-prdt:hover {
-    transform: scale(1.05);
+        &:hover{transform: scale(1.05);}
+    }
 }
 
 main .card .produto .conteudo {
@@ -144,12 +134,8 @@ main .card .produto .conteudo {
     padding: 15px;
     cursor: auto;
     color: var(--text-primary);
-}
 
-main .card .produto .conteudo .linha {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    & .linha{display: flex;justify-content: space-between;width: 100%;}
 }
 
 main .card .produto .conteudo .nome-prdt {font-size: .75rem;font-weight: bold;}
@@ -185,22 +171,19 @@ main .card .produto .conteudo .botaoComprar {
     background: var(--primary);
     transition: all .3s ease-in-out;
     isolation: isolate;
+
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(-60deg, transparent 40%, rgba(255, 255, 255, 0.597), transparent 60%);
+        background-size: 200% 100%;
+        animation: moverCor 7s linear infinite;
+        z-index: 0;
+    }
+    &:hover{transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); color: white;}
 }
 
-main .card .produto .conteudo .botaoComprar::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(-60deg, transparent 40%, rgba(255, 255, 255, 0.597), transparent 60%);
-    background-size: 200% 100%;
-    animation: moverCor 7s linear infinite;
-    z-index: 0;
-}
-main .card .produto .conteudo .botaoComprar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    color: white;
-}
 main .card .admin-acoes{
     width: 100%;
     gap: 10px;
@@ -209,14 +192,26 @@ main .card .admin-acoes{
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
-}
-.admin-acoes .icon-footer{display: inline-flex;align-items: center;justify-content: center;width: 35px;height: 25px;border-radius: 10px; cursor: pointer;}
-.admin-acoes .icon-footer img{width: 18px;height: 18px;}
-.icon-footer.editar{border: 1.3px solid #1059f5;background: #1058f58b; transition: all .3s ease-in-out;}
-.icon-footer.editar:hover{background: #1058f5ab; transform: translateY(-2px);}
-.icon-footer.apagar{border: 1.3px solid #e60303; background: #e603058b; transition: all .3s ease-in-out;}
-.icon-footer.apagar:hover{background: #e60305ab; transform: translateY(-2px);}
 
+    & .icon-footer{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 25px;
+        border-radius: 10px; 
+        cursor: pointer;
+
+        & img{width: 18px;height: 18px;}
+    }
+}
+
+.icon-footer.editar{border: 1.3px solid #1059f5;background: #1058f58b; transition: all .3s ease-in-out;
+    &:hover{background: #1058f5ab; transform: translateY(-2px);}
+}
+.icon-footer.apagar{border: 1.3px solid #e60303; background: #e603058b; transition: all .3s ease-in-out;
+    &:hover{background: #e60305ab; transform: translateY(-2px);}
+}
 
 @keyframes moverCor {
     0% {
@@ -251,10 +246,8 @@ main .card .admin-acoes{
     font-size: 13px;
     font-weight: 500;
     white-space: nowrap;
-}
 
-.flash-item strong {
-    font-weight: 700;
+    & strong{font-weight: 700;}
 }
 
 @keyframes scrollLeft {
@@ -288,13 +281,15 @@ main .conteiner {
     display: flex;
     align-items: center;
     padding: 40px;
+
+    &::before{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 80% 50%, rgba(232,65,10,0.25) 0%, transparent 60%);
+    }
 }
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 80% 50%, rgba(232,65,10,0.25) 0%, transparent 60%);
-}
+
 .hero-deco {
   position: absolute;
   left: 20px;
@@ -322,26 +317,23 @@ main .conteiner {
   border-radius: 50%;
   border: 40px solid rgba(245,166,35,0.06);
 }
-.hero-content { position: relative; 
+.hero-content { 
+    position: relative; 
     max-width: 400px; 
+
+    & h1{
+        font-family: var(--font-display);
+        font-size: 46px;
+        font-weight: 800;
+        color: white;
+        line-height: 1.05;
+        letter-spacing: -1px;
+        margin-bottom: 14px;
+        & span{color: var(--primary);}
+    }
+    & p{color: rgba(255,255,255,0.6);font-size: 15px; margin-bottom: 28px;}
 }
-.hero-content h1 {
-  font-family: var(--font-display);
-  font-size: 46px;
-  font-weight: 800;
-  color: white;
-  line-height: 1.05;
-  letter-spacing: -1px;
-  margin-bottom: 14px;
-}
-.hero-content h1 span {
-    color: var(--primary-light); 
-}
-.hero-content p { 
-    color: rgba(255,255,255,0.6); 
-    font-size: 15px; 
-    margin-bottom: 28px;
-}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -367,8 +359,6 @@ main .conteiner {
   padding: 13px 28px;
   border-radius: var(--radius-lg);
   transition: all var(--transition);
+
+  &:hover{background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,65,10,0.4);}
 }
-.hero-cta:hover { 
-    background: var(--primary-dark); 
-    transform: translateY(-1px); 
-    box-shadow: 0 6px 20px rgba(232,65,10,0.4); }

@@ -1,3 +1,53 @@
+<?php
+session_start();
+require_once '../pages/conexao.php';
+
+if (($_SESSION['usuario_nivel'] ?? '') !== 'admin') {
+    header("Location: ../index.php");
+    exit;
+}
+
+$id = $_GET['id'] ?? null;
+$produto = ['nome' => '', 'descricao' => '', 'preco' => '', 'preco_antigo' => '', 'imagem' => '', 'cores' => 1];
+$erro = "";
+
+if ($id) {
+    $sql = $pdo->prepare("SELECT * FROM produtos WHERE id = ?");
+    $sql->execute([$id]);
+    $produto = $sql->fetch(PDO::FETCH_ASSOC);
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $preco = $_POST['preco'];
+    $preco_antigo = $_POST['preco_antigo'] ?: null;
+    $cores = $_POST['cores'];
+    $imagemNome = $produto['imagem'];
+
+    if (!empty($_FILES['imagem']['name'])) {
+        $extensao = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+        $imagemNome = uniqid('produto_') . '.' . $extensao;
+        move_uploaded_file($_FILES['imagem']['tmp_name'], '../Imagens/Roupas/' . $imagemNome);
+    }
+
+    if (!$imagemNome) {
+        $erro = "Escolhe uma imagem para o produto.";
+    } else if ($id) {
+        $sql = $pdo->prepare("UPDATE produtos SET nome=?, descricao=?, preco=?, preco_antigo=?, imagem=?, cores=? WHERE id=?");
+        $sql->execute([$nome, $descricao, $preco, $preco_antigo, $imagemNome, $cores, $id]);
+        header("Location: ../index.php");
+        exit;
+    } else {
+        $sql = $pdo->prepare("INSERT INTO produtos (nome, descricao, preco, preco_antigo, imagem, cores) VALUES (?,?,?,?,?,?)");
+        $sql->execute([$nome, $descricao, $preco, $preco_antigo, $imagemNome, $cores]);
+        header("Location: ../index.php");
+        exit;
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +76,7 @@
     <main>
         <form action="">
             <div class="title">
-                <h1>Adicionar <span>Produto</span></h1>
+                <h1><?= $id ? "Novo Produto" : "Editar Produto" ?></h1>
             </div>
             <div class="file-input">
                 <label for="imagem">Escolher imagem do produto</label>

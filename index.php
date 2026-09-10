@@ -39,13 +39,16 @@ if ($admin && isset($_GET['apagar'])) {
         <div class="nav-links-externo">
             <nav id="nav-links">
                 <a href="categorias/categoria-homem.html">Homem</a>
-                <a href="categorias/categotia-mulher.html">Mulher</a>
+                <a href="categorias/categoria-mulher.html">Mulher</a>
                 <a href="categorias/categoria-crianca.html">Criança</a>
                 <a href="categorias/categoria-sapatos.html">Casacos</a>
                 <a href="categorias/categoria-calcas.html">Calças</a>
                 <a href="categorias/categoria-calcoes.html">Calções</a>
                 <a href="categorias/categoria-calcoes.html">Conjuntos</a>
-                <button class="btn-add-categoria">&plus;</button>
+                
+                <?php if ($admin): ?>
+                    <button class="btn-add-categoria">&plus;</button>
+                <?php endif; ?>
             </nav>
         </div>
         <div id="loja">
@@ -107,7 +110,7 @@ if ($admin && isset($_GET['apagar'])) {
                         </a>
                         <?php if ($admin): ?>
                             <div class="admin-acoes">
-                                <a href="pages/produto_form.php?id=<?= $produto['id'] ?>" class="icon-footer editar"><img src="Imagens/Icons/editar.svg" alt="Editar"></a>
+                                <a href="src/produto_form.php?id=<?= $produto['id'] ?>" class="icon-footer editar"><img src="Imagens/Icons/editar.svg" alt="Editar"></a>
                                 <a href="index.php?apagar=<?= $produto['id'] ?>" onclick="return confirm('Tem certeza que deseja apagar este produto?')" class="icon-footer apagar"><img src="Imagens/Icons/delete.svg" alt="Apagar"></a>
                             </div>
                         <?php endif; ?>

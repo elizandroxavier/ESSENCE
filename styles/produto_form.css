@@ -27,15 +27,17 @@ form{
     padding: 60px;
     border-radius: 10px;
     gap: 20px;
+
+    & input, textarea{
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        padding-left: 10px;
+    }
 }
-form input, textarea{
-    background: transparent;
-    border: none;
-    outline: none;
-    width: 100%;
-    height: 100%;
-    padding-left: 10px;
-}
+
 h1{font-size: 2.3rem;font-weight: bold;color: black;}
 h1 span{color: var(--primary);}
 input[type="file"]{
@@ -54,42 +56,44 @@ input[type="file"]{
     border-radius: var(--radius-md);
     background: #e8410a0a;
     transition: background-color .2s, border-color .2s;
+
+    &:hover, &:focus-visible{border-color: var(--primary);background: rgba(232, 65, 10, 0.1);}
+    & label{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: var(--primary);
+        font-weight: 600;
+        cursor: pointer;
+    }
 }
-.file-input label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    color: var(--primary);
-    font-weight: 600;
-    cursor: pointer;
-}
-.file-input:hover,
-.file-input:focus-within {
-    border-color: var(--primary);
-    background: rgba(232, 65, 10, 0.1);
-}
+
 .box-text{
     display: inline-flex;
     justify-content: space-between;
     gap: 20px;
     width: 85%;
     color: var(--text-secondary);
+
+    & .input-box-textarea{
+        position: relative;
+        width: 50%;
+        height: 75px;
+        border: 1.5px solid var(--primary);
+        border-radius: var(--radius-md);
+
+        & textarea{padding: 10px; background: #e8410a0a;}
+    }
 }
-.box-text .input-box-textarea{
-    position: relative;
-    width: 50%;
-    height: 75px;
-    border: 1.5px solid var(--primary);
-    border-radius: var(--radius-md);
-}
-.box-text .input-box-textarea textarea{padding: 10px; background: #e8410a0a;}
 .box-text .box-text-inner{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
+
+    & .precos{display: inline-flex; justify-content: space-between; gap: 15px;}
 }
 .box-text-inner .input-box{
     position: relative;
@@ -97,21 +101,18 @@ input[type="file"]{
     height: 30px;
     border: 1.5px solid var(--primary);
     border-radius: var(--radius-md);
+
+    & label{
+        font-size: .95rem;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        transition: all .3s ease-in-out;
+        pointer-events: none;
+    }
 }
-.box-text .box-text-inner .precos{
-    display: inline-flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-.input-box label{
-    font-size: .95rem;
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    transition: all .3s ease-in-out;
-    pointer-events: none;
-}
+
 .input-box-textarea label{
     position: absolute;
     top: 50%;
@@ -122,15 +123,18 @@ input[type="file"]{
     transition: all .3s ease-in-out;
     pointer-events: none;
 }
-.input-box input:focus~label, .input-box input:valid~label, .input-box-textarea textarea:focus~label, .input-box-textarea textarea:valid~label{
-    top: -1px; 
-    left: 10px;
-    color: var(--text-primary);
-    font-size: .7rem;
-    background: var(--bg);
-    padding: 0 5px;
-    font-weight: 550;
+.input-box input, textarea{
+    &:focus~label, &:valid~label{
+        top: -1px; 
+        left: 10px;
+        color: var(--text-primary);
+        font-size: .7rem;
+        background: var(--bg);
+        padding: 0 5px;
+        font-weight: 550;
+    }
 }
+
 .box-qtd{display: inline-flex;justify-content: space-between; width: 85%;gap: 15px;}
 .box-qtd .box-qtd-inner{
     display: grid;
@@ -154,8 +158,9 @@ input[type="file"]{
     border-radius: var(--radius-md);
     transition: all .3s ease;
     cursor: pointer;
+    &:hover{background: #e8410a10;}
 }
-.box-qtd-inner .adicionar:hover{background: #e8410a10;}
+
 .box-qtd-inner .add-text{font-weight: bold; width: 100%; grid-area: text;}
 
 .conteiner-cor, .conteiner-size{
